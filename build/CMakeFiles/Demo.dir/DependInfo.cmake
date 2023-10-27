@@ -8,8 +8,8 @@ set(CMAKE_DEPENDS_LANGUAGES
 
 # The set of dependency files which are needed:
 set(CMAKE_DEPENDS_DEPENDENCY_FILES
-  "C:/Users/HUAWEI/Desktop/program/软件设计/lab1/Command.cpp" "CMakeFiles/Demo.dir/Command.cpp.obj" "gcc" "CMakeFiles/Demo.dir/Command.cpp.obj.d"
-  "C:/Users/HUAWEI/Desktop/program/软件设计/lab1/test.cpp" "CMakeFiles/Demo.dir/test.cpp.obj" "gcc" "CMakeFiles/Demo.dir/test.cpp.obj.d"
+  "C:/Users/HUAWEI/Desktop/program/softwareDesign/lab1/Command.cpp" "CMakeFiles/Demo.dir/Command.cpp.obj" "gcc" "CMakeFiles/Demo.dir/Command.cpp.obj.d"
+  "C:/Users/HUAWEI/Desktop/program/softwareDesign/lab1/test.cpp" "CMakeFiles/Demo.dir/test.cpp.obj" "gcc" "CMakeFiles/Demo.dir/test.cpp.obj.d"
   )
 
 # Targets to which this target links.

@@ -1,0 +1,3 @@
+C:/Users/HUAWEI/Desktop/program/softwareDesign/lab1/CMakeFiles/Demo.dir
+C:/Users/HUAWEI/Desktop/program/softwareDesign/lab1/CMakeFiles/edit_cache.dir
+C:/Users/HUAWEI/Desktop/program/softwareDesign/lab1/CMakeFiles/rebuild_cache.dir

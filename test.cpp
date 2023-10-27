@@ -8,7 +8,7 @@ vector<string> commands;
 int testCommandLoad(){
     commands.clear();
     string str;
-    string filename1 = "../testplace/txt.md";
+    string filename1 = "C:\\Users\\HUAWEI\\Desktop\\program\\softwareDesign\\testplace\\txt.md";
     str = "load "+filename1+"\n";
     commands.push_back(str);
     return 0;
@@ -21,9 +21,10 @@ int main(){
         cout << command << endl;
         if (command.find("load") == 0)
         {   //TODO:to check the address
-            regex pattern("^[a-zA-Z0-9_./\\\\]+$");
-            command = command.substr(command.find("load")+1);
-            if(regex_match(command, pattern))
+            regex pattern("^([a-zA-Z]:(([\\\\/])[^\\\\/:*?<>|]+)*([\\\\/])[^\\\\/:*?<>|]+\\.[^\\\\/:*?<>|]+,)*[a-zA-Z]:(([\\\\/])[^\\\\/:*?<>|]+)*([\\\\/])[^\\\\/:*?<>|]+\\.[^\\\\/:*?<>|]+$");
+            command = command.substr(command.find("load")+5);
+            command = command.substr(0,command.length()-1);
+            if(regex_match(command, pattern)&&command.find(".md")==(command.length()-3))
             {
                 FileCommand* commandA = new mdFile(command);
                 Invoker invoker;
