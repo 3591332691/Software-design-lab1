@@ -78,23 +78,16 @@ int pre_process_test(){
                 printf("insert 格式不正确");
             }
         }
-        else if(command.find("append-head") == 0||command.find("append-tail") == 0)
+        else if(command.find("append_head") == 0||command.find("append_tail") == 0)
         {
-            
+            command = command.substr(command.find_first_of(" ")+1);
             insertCommand* commandA = new insertCommand;
             Invoker invoker;
             invoker.setInsertCommand(commandA);
-            if(command.find("append-head")== 0)
-            {
-                command = command.substr(command.find_first_of(" ")+1);
+            if(command.find("append_head")== 0)
             invoker.executeInsertCommand(0,command);
-            }
             else
-            {
-                command = command.substr(command.find_first_of(" ")+1);
-                invoker.executeInsertCommand(currentFileName.size(),command);
-            }
-            
+            invoker.executeInsertCommand(currentFileName.size(),command);
             delete commandA;
         }
     }
@@ -148,20 +141,18 @@ int testCommandAppend(){
     string filename1 = "../testplace/txt.md";
     str = "load "+filename1+"\n";
     commands.push_back(str);
-    str = "append-head to be the head\n";
+    str = "append_head to be the head\n";
     commands.push_back(str);
-    str = "append-tail to be the tail \n";
+    str = "append_tail to be the tail \n";
     commands.push_back(str);
     str = "save \n";
     commands.push_back(str);
     pre_process_test();
-    return 0;
 }
 int main(){
     //testCommandLoad();
     //testCommandSave();
-    //testCommandInsert();
-    testCommandAppend();
+    testCommandInsert();
     commands.clear();
     return 0;
 }

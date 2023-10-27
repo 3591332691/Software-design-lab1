@@ -84,10 +84,10 @@ int pre_process_test(){
             insertCommand* commandA = new insertCommand;
             Invoker invoker;
             invoker.setInsertCommand(commandA);
-            if(command.find("append-head")== 0)
+            if(command.find("append_head")== 0)
             {
                 command = command.substr(command.find_first_of(" ")+1);
-            invoker.executeInsertCommand(0,command);
+            invoker.executeInsertCommand(1,command);
             }
             else
             {

@@ -87,7 +87,7 @@ int pre_process_test(){
             if(command.find("append-head")== 0)
             {
                 command = command.substr(command.find_first_of(" ")+1);
-            invoker.executeInsertCommand(0,command);
+            invoker.executeInsertCommand(1,command);
             }
             else
             {
