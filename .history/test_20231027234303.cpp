@@ -21,7 +21,6 @@ int testCommandLoad(){
     pre_process_test();
     return 0;
 }
-
 int pre_process_test(){
     for (auto command : commands)
     {
@@ -45,8 +44,8 @@ int pre_process_test(){
             {
                 cout<<"路径"<<command<<"有非法字符"<<endl;
             } 
+            }
         }
-    }
 }
 int main(){
     testCommandLoad();

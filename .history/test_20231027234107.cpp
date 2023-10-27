@@ -18,12 +18,10 @@ int testCommandLoad(){
     string filename3 = "../txt2?.md";
     str = "load "+filename3+"\n";
     commands.push_back(str);
-    pre_process_test();
     return 0;
 }
-
-int pre_process_test(){
-    for (auto command : commands)
+int pre_process_command(){
+for (auto command : commands)
     {
         if (command.find("load") == 0)
         {   //TODO:to check the address
@@ -44,10 +42,11 @@ int pre_process_test(){
             else
             {
                 cout<<"路径"<<command<<"有非法字符"<<endl;
-            } 
+            }
+            
+            }
         }
     }
-}
 int main(){
     testCommandLoad();
     

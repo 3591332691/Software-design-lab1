@@ -21,7 +21,7 @@ int testCommandLoad(){
     pre_process_test();
     return 0;
 }
-
+int list
 int pre_process_test(){
     for (auto command : commands)
     {

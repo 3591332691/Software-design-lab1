@@ -5,7 +5,6 @@
 #include "invoker.h"
 using namespace std;
 vector<string> commands;
-string currentFileName;
 int testCommandLoad(){
     commands.clear();
     string str;
@@ -15,14 +14,11 @@ int testCommandLoad(){
     string filename2 = "../txt1.md";
     str = "load "+filename2+"\n";
     commands.push_back(str);
-    string filename3 = "../txt2?.md";
-    str = "load "+filename3+"\n";
-    commands.push_back(str);
-    pre_process_test();
     return 0;
 }
 
-int pre_process_test(){
+int main(){
+    testCommandLoad();
     for (auto command : commands)
     {
         if (command.find("load") == 0)
@@ -31,6 +27,7 @@ int pre_process_test(){
             regex pattern1("^[\\.]{1,2}((/){1}[\\w]+[\\.]{0,1}[\\w]+)+$");
             command = command.substr(command.find("load")+5);
             command = command.substr(0,command.length()-1);
+            cout<<(regex_match(command, pattern1)?1:0)<<endl;
             if((regex_match(command, pattern)||regex_match(command, pattern1))&&command.find(".md")==(command.length()-3))
             {
                 FileCommand* commandA = new mdFile(command);
@@ -38,18 +35,14 @@ int pre_process_test(){
                 invoker.setFileCommand(commandA);
                 invoker.executeLoadCommand();
                 cout<<"打开了文件"<<command<<endl;
-                currentFileName = command;
                 delete commandA;
             }
             else
             {
-                cout<<"路径"<<command<<"有非法字符"<<endl;
-            } 
+                cout<<"路径有非法字符"<<endl;
+            }
+            
         }
     }
-}
-int main(){
-    testCommandLoad();
-    
     return 0;
 }

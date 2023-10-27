@@ -5,7 +5,6 @@
 #include "invoker.h"
 using namespace std;
 vector<string> commands;
-string currentFileName;
 int testCommandLoad(){
     commands.clear();
     string str;
@@ -16,13 +15,13 @@ int testCommandLoad(){
     str = "load "+filename2+"\n";
     commands.push_back(str);
     string filename3 = "../txt2?.md";
-    str = "load "+filename3+"\n";
+    str = "load "+filename2+"\n";
     commands.push_back(str);
-    pre_process_test();
     return 0;
 }
 
-int pre_process_test(){
+int main(){
+    testCommandLoad();
     for (auto command : commands)
     {
         if (command.find("load") == 0)
@@ -38,18 +37,14 @@ int pre_process_test(){
                 invoker.setFileCommand(commandA);
                 invoker.executeLoadCommand();
                 cout<<"打开了文件"<<command<<endl;
-                currentFileName = command;
                 delete commandA;
             }
             else
             {
                 cout<<"路径"<<command<<"有非法字符"<<endl;
-            } 
+            }
+            
         }
     }
-}
-int main(){
-    testCommandLoad();
-    
     return 0;
 }

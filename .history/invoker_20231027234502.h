@@ -14,8 +14,8 @@ public:
     void executeLoadCommand() {
         fileCommand->load();
     }
-    void executeSaveCommand() {
-        fileCommand->save();
+    void executeLoadCommand() {
+        fileCommand->load();
     }
 };
 #endif
