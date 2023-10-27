@@ -1,0 +1,21 @@
+#ifndef INVOKER_H
+#define INVOKER_H
+#include <string.h>
+#include "FileCommand.h"
+class Invoker {
+private:
+    FileCommand* fileCommand;
+
+public:
+    void setFileCommand(FileCommand* cmd) {
+        fileCommand = cmd;
+    }
+
+    void executeLoadCommand() {
+        fileCommand->load();
+    }
+    void executeSaveCommand() {
+        fileCommand->save();
+    }
+};
+#endif
