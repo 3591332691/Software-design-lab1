@@ -1,0 +1,12 @@
+[
+{
+  "directory": "C:/Users/HUAWEI/Desktop/program/软件设计/lab1/build",
+  "command": "D:\\Mingw-w64\\mingw64\\bin\\g++.exe   -g -o CMakeFiles\\Demo.dir\\Command.cpp.obj -c C:\\Users\\HUAWEI\\Desktop\\program\\软件设计\\lab1\\Command.cpp",
+  "file": "C:/Users/HUAWEI/Desktop/program/软件设计/lab1/Command.cpp"
+},
+{
+  "directory": "C:/Users/HUAWEI/Desktop/program/软件设计/lab1/build",
+  "command": "D:\\Mingw-w64\\mingw64\\bin\\g++.exe   -g -o CMakeFiles\\Demo.dir\\test.cpp.obj -c C:\\Users\\HUAWEI\\Desktop\\program\\软件设计\\lab1\\test.cpp",
+  "file": "C:/Users/HUAWEI/Desktop/program/软件设计/lab1/test.cpp"
+}
+]

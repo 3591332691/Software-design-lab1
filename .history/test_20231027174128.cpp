@@ -1,0 +1,26 @@
+#include <iostream>
+#include <vector>
+#include "Command.h"
+using namespace std;
+vector<string> commands;
+int testCommandLoad(){
+    commands.clear();
+    string str;
+    string filename1 = "./testplace/txt.md";
+    str = "load "+filename1+"\n";
+    commands.push_back(str);
+
+}
+
+int main(){
+    testCommandLoad();
+for (auto tmp : stu)
+    {
+        cout << tmp << endl;
+        if (tmp == buf)
+        {
+            cout << "=" << endl;
+        }
+    }
+    return 0;
+}
