@@ -21,6 +21,5 @@ class deleteCommand :public deleteAction{
     public: 
     void delete_(int n) override;
     void delete_(std::string s) override;
-    deleteCommand ();
 };
 #endif

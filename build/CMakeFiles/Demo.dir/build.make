@@ -68,24 +68,38 @@ include CMakeFiles/Demo.dir/progress.make
 # Include the compile flags for this target's objects.
 include CMakeFiles/Demo.dir/flags.make
 
-CMakeFiles/Demo.dir/Command.cpp.obj: CMakeFiles/Demo.dir/flags.make
-CMakeFiles/Demo.dir/Command.cpp.obj: C:/Users/HUAWEI/Desktop/program/softwareDesign/lab1/Command.cpp
-CMakeFiles/Demo.dir/Command.cpp.obj: CMakeFiles/Demo.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\HUAWEI\Desktop\program\softwareDesign\lab1\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/Demo.dir/Command.cpp.obj"
-	D:\Mingw-w64\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/Demo.dir/Command.cpp.obj -MF CMakeFiles\Demo.dir\Command.cpp.obj.d -o CMakeFiles\Demo.dir\Command.cpp.obj -c C:\Users\HUAWEI\Desktop\program\softwareDesign\lab1\Command.cpp
+CMakeFiles/Demo.dir/ContentsCommand.cpp.obj: CMakeFiles/Demo.dir/flags.make
+CMakeFiles/Demo.dir/ContentsCommand.cpp.obj: C:/Users/HUAWEI/Desktop/program/softwareDesign/lab1/ContentsCommand.cpp
+CMakeFiles/Demo.dir/ContentsCommand.cpp.obj: CMakeFiles/Demo.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\HUAWEI\Desktop\program\softwareDesign\lab1\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/Demo.dir/ContentsCommand.cpp.obj"
+	D:\Mingw-w64\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/Demo.dir/ContentsCommand.cpp.obj -MF CMakeFiles\Demo.dir\ContentsCommand.cpp.obj.d -o CMakeFiles\Demo.dir\ContentsCommand.cpp.obj -c C:\Users\HUAWEI\Desktop\program\softwareDesign\lab1\ContentsCommand.cpp
 
-CMakeFiles/Demo.dir/Command.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Demo.dir/Command.cpp.i"
-	D:\Mingw-w64\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\HUAWEI\Desktop\program\softwareDesign\lab1\Command.cpp > CMakeFiles\Demo.dir\Command.cpp.i
+CMakeFiles/Demo.dir/ContentsCommand.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Demo.dir/ContentsCommand.cpp.i"
+	D:\Mingw-w64\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\HUAWEI\Desktop\program\softwareDesign\lab1\ContentsCommand.cpp > CMakeFiles\Demo.dir\ContentsCommand.cpp.i
 
-CMakeFiles/Demo.dir/Command.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Demo.dir/Command.cpp.s"
-	D:\Mingw-w64\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\HUAWEI\Desktop\program\softwareDesign\lab1\Command.cpp -o CMakeFiles\Demo.dir\Command.cpp.s
+CMakeFiles/Demo.dir/ContentsCommand.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Demo.dir/ContentsCommand.cpp.s"
+	D:\Mingw-w64\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\HUAWEI\Desktop\program\softwareDesign\lab1\ContentsCommand.cpp -o CMakeFiles\Demo.dir\ContentsCommand.cpp.s
+
+CMakeFiles/Demo.dir/FileCommand.cpp.obj: CMakeFiles/Demo.dir/flags.make
+CMakeFiles/Demo.dir/FileCommand.cpp.obj: C:/Users/HUAWEI/Desktop/program/softwareDesign/lab1/FileCommand.cpp
+CMakeFiles/Demo.dir/FileCommand.cpp.obj: CMakeFiles/Demo.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\HUAWEI\Desktop\program\softwareDesign\lab1\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/Demo.dir/FileCommand.cpp.obj"
+	D:\Mingw-w64\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/Demo.dir/FileCommand.cpp.obj -MF CMakeFiles\Demo.dir\FileCommand.cpp.obj.d -o CMakeFiles\Demo.dir\FileCommand.cpp.obj -c C:\Users\HUAWEI\Desktop\program\softwareDesign\lab1\FileCommand.cpp
+
+CMakeFiles/Demo.dir/FileCommand.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Demo.dir/FileCommand.cpp.i"
+	D:\Mingw-w64\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\HUAWEI\Desktop\program\softwareDesign\lab1\FileCommand.cpp > CMakeFiles\Demo.dir\FileCommand.cpp.i
+
+CMakeFiles/Demo.dir/FileCommand.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Demo.dir/FileCommand.cpp.s"
+	D:\Mingw-w64\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\HUAWEI\Desktop\program\softwareDesign\lab1\FileCommand.cpp -o CMakeFiles\Demo.dir\FileCommand.cpp.s
 
 CMakeFiles/Demo.dir/test.cpp.obj: CMakeFiles/Demo.dir/flags.make
 CMakeFiles/Demo.dir/test.cpp.obj: C:/Users/HUAWEI/Desktop/program/softwareDesign/lab1/test.cpp
 CMakeFiles/Demo.dir/test.cpp.obj: CMakeFiles/Demo.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\HUAWEI\Desktop\program\softwareDesign\lab1\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/Demo.dir/test.cpp.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\HUAWEI\Desktop\program\softwareDesign\lab1\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/Demo.dir/test.cpp.obj"
 	D:\Mingw-w64\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/Demo.dir/test.cpp.obj -MF CMakeFiles\Demo.dir\test.cpp.obj.d -o CMakeFiles\Demo.dir\test.cpp.obj -c C:\Users\HUAWEI\Desktop\program\softwareDesign\lab1\test.cpp
 
 CMakeFiles/Demo.dir/test.cpp.i: cmake_force
@@ -98,19 +112,21 @@ CMakeFiles/Demo.dir/test.cpp.s: cmake_force
 
 # Object files for target Demo
 Demo_OBJECTS = \
-"CMakeFiles/Demo.dir/Command.cpp.obj" \
+"CMakeFiles/Demo.dir/ContentsCommand.cpp.obj" \
+"CMakeFiles/Demo.dir/FileCommand.cpp.obj" \
 "CMakeFiles/Demo.dir/test.cpp.obj"
 
 # External object files for target Demo
 Demo_EXTERNAL_OBJECTS =
 
-Demo.exe: CMakeFiles/Demo.dir/Command.cpp.obj
+Demo.exe: CMakeFiles/Demo.dir/ContentsCommand.cpp.obj
+Demo.exe: CMakeFiles/Demo.dir/FileCommand.cpp.obj
 Demo.exe: CMakeFiles/Demo.dir/test.cpp.obj
 Demo.exe: CMakeFiles/Demo.dir/build.make
 Demo.exe: CMakeFiles/Demo.dir/linklibs.rsp
 Demo.exe: CMakeFiles/Demo.dir/objects1.rsp
 Demo.exe: CMakeFiles/Demo.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=C:\Users\HUAWEI\Desktop\program\softwareDesign\lab1\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Linking CXX executable Demo.exe"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=C:\Users\HUAWEI\Desktop\program\softwareDesign\lab1\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Linking CXX executable Demo.exe"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles\Demo.dir\link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.

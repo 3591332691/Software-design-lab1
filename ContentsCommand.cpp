@@ -11,13 +11,24 @@ void insertCommand::insert(int lineNumber, string str){
 }
 void deleteCommand::delete_(int n)
 {
-    for(int i = n-1;i<currentFileContents.size();i++)
+    if(n>currentFileContents.size()||n<=0)cout<<"找不到第"<<n<<"行"<<endl;
+    else{
+        for(int i = n-1;i+1<currentFileContents.size();i++)
     {
         currentFileContents[i] = currentFileContents[i+1];
     }
-    currentFileContents.pop_back();
+        currentFileContents.pop_back();
+        cout<<"删除了第"<<n<<"行"<<endl;
+    }
 }
 void deleteCommand::delete_(string s)
 {
-    vector<string> result;
+    int temp = 0;
+    for(int i = 0; i < currentFileContents.size(); i++){
+        if(s == currentFileContents[i]){
+            delete_(i+1);
+            temp = 1;
+        }
+    }
+    if(temp == 0)cout<<"找不到"<<s<<endl;
 }

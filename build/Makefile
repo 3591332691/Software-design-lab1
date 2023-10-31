@@ -128,29 +128,53 @@ Demo/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\Demo.dir\build.make CMakeFiles/Demo.dir/build
 .PHONY : Demo/fast
 
-Command.obj: Command.cpp.obj
-.PHONY : Command.obj
+ContentsCommand.obj: ContentsCommand.cpp.obj
+.PHONY : ContentsCommand.obj
 
 # target to build an object file
-Command.cpp.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\Demo.dir\build.make CMakeFiles/Demo.dir/Command.cpp.obj
-.PHONY : Command.cpp.obj
+ContentsCommand.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Demo.dir\build.make CMakeFiles/Demo.dir/ContentsCommand.cpp.obj
+.PHONY : ContentsCommand.cpp.obj
 
-Command.i: Command.cpp.i
-.PHONY : Command.i
+ContentsCommand.i: ContentsCommand.cpp.i
+.PHONY : ContentsCommand.i
 
 # target to preprocess a source file
-Command.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\Demo.dir\build.make CMakeFiles/Demo.dir/Command.cpp.i
-.PHONY : Command.cpp.i
+ContentsCommand.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Demo.dir\build.make CMakeFiles/Demo.dir/ContentsCommand.cpp.i
+.PHONY : ContentsCommand.cpp.i
 
-Command.s: Command.cpp.s
-.PHONY : Command.s
+ContentsCommand.s: ContentsCommand.cpp.s
+.PHONY : ContentsCommand.s
 
 # target to generate assembly for a file
-Command.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\Demo.dir\build.make CMakeFiles/Demo.dir/Command.cpp.s
-.PHONY : Command.cpp.s
+ContentsCommand.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Demo.dir\build.make CMakeFiles/Demo.dir/ContentsCommand.cpp.s
+.PHONY : ContentsCommand.cpp.s
+
+FileCommand.obj: FileCommand.cpp.obj
+.PHONY : FileCommand.obj
+
+# target to build an object file
+FileCommand.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Demo.dir\build.make CMakeFiles/Demo.dir/FileCommand.cpp.obj
+.PHONY : FileCommand.cpp.obj
+
+FileCommand.i: FileCommand.cpp.i
+.PHONY : FileCommand.i
+
+# target to preprocess a source file
+FileCommand.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Demo.dir\build.make CMakeFiles/Demo.dir/FileCommand.cpp.i
+.PHONY : FileCommand.cpp.i
+
+FileCommand.s: FileCommand.cpp.s
+.PHONY : FileCommand.s
+
+# target to generate assembly for a file
+FileCommand.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Demo.dir\build.make CMakeFiles/Demo.dir/FileCommand.cpp.s
+.PHONY : FileCommand.cpp.s
 
 test.obj: test.cpp.obj
 .PHONY : test.obj
@@ -185,9 +209,12 @@ help:
 	@echo ... edit_cache
 	@echo ... rebuild_cache
 	@echo ... Demo
-	@echo ... Command.obj
-	@echo ... Command.i
-	@echo ... Command.s
+	@echo ... ContentsCommand.obj
+	@echo ... ContentsCommand.i
+	@echo ... ContentsCommand.s
+	@echo ... FileCommand.obj
+	@echo ... FileCommand.i
+	@echo ... FileCommand.s
 	@echo ... test.obj
 	@echo ... test.i
 	@echo ... test.s

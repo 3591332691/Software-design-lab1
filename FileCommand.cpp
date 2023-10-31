@@ -14,7 +14,7 @@ void mdFile::load() {
             contents.push_back(line);
         }
         file.close();
-        currentFileContents = contents;
+        currentFileContents = contents;//在这里把内容存在currentFileContents里
         contents.clear();
     } 
     else 

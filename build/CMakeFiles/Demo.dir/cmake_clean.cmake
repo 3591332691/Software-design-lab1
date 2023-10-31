@@ -1,6 +1,8 @@
 file(REMOVE_RECURSE
-  "CMakeFiles/Demo.dir/Command.cpp.obj"
-  "CMakeFiles/Demo.dir/Command.cpp.obj.d"
+  "CMakeFiles/Demo.dir/ContentsCommand.cpp.obj"
+  "CMakeFiles/Demo.dir/ContentsCommand.cpp.obj.d"
+  "CMakeFiles/Demo.dir/FileCommand.cpp.obj"
+  "CMakeFiles/Demo.dir/FileCommand.cpp.obj.d"
   "CMakeFiles/Demo.dir/test.cpp.obj"
   "CMakeFiles/Demo.dir/test.cpp.obj.d"
   "Demo.exe"

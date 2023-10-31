@@ -97,6 +97,27 @@ int pre_process_test(){
             
             delete commandA;
         }
+        else if(command.find("delete") == 0){
+            command = command.substr(command.find_first_of(" ")+1);
+            command.erase(command.find('\n'), 1);
+            deleteCommand* commandA = new deleteCommand();
+            Invoker invoker;
+            invoker.setDeleteCommand(commandA);
+            int temp = 0;
+            for(auto c : command)
+            {
+                if(c<='9'&&c>='0'){;}
+                else 
+                {
+                    invoker.executeDeleteCommand(command);
+                    temp = 1;
+                    break;
+                }
+            }
+            if(temp == 0)
+            invoker.executeDeleteCommand(stoi(command));
+            delete commandA;
+        }
     }
     return 0;
 }
@@ -157,11 +178,27 @@ int testCommandAppend(){
     pre_process_test();
     return 0;
 }
+int testCommandDelete(){
+    commands.clear();
+    string str;
+    string filename1 = "../testplace/txt.md";
+    str = "load "+filename1+"\n";
+    commands.push_back(str);
+    str = "delete 5\n";
+    commands.push_back(str);
+    str = "delete pa5\n";
+    commands.push_back(str);
+    str = "save \n";
+    commands.push_back(str);
+    pre_process_test();
+    return 0;
+}
 int main(){
     //testCommandLoad();
     //testCommandSave();
     //testCommandInsert();
-    testCommandAppend();
+    //testCommandAppend();
+    //testCommandDelete();
     commands.clear();
     return 0;
 }

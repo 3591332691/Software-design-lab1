@@ -1,8 +1,13 @@
 [
 {
   "directory": "C:/Users/HUAWEI/Desktop/program/softwareDesign/lab1/build",
-  "command": "D:\\Mingw-w64\\mingw64\\bin\\g++.exe   -g -o CMakeFiles\\Demo.dir\\Command.cpp.obj -c C:\\Users\\HUAWEI\\Desktop\\program\\softwareDesign\\lab1\\Command.cpp",
-  "file": "C:/Users/HUAWEI/Desktop/program/softwareDesign/lab1/Command.cpp"
+  "command": "D:\\Mingw-w64\\mingw64\\bin\\g++.exe   -g -o CMakeFiles\\Demo.dir\\ContentsCommand.cpp.obj -c C:\\Users\\HUAWEI\\Desktop\\program\\softwareDesign\\lab1\\ContentsCommand.cpp",
+  "file": "C:/Users/HUAWEI/Desktop/program/softwareDesign/lab1/ContentsCommand.cpp"
+},
+{
+  "directory": "C:/Users/HUAWEI/Desktop/program/softwareDesign/lab1/build",
+  "command": "D:\\Mingw-w64\\mingw64\\bin\\g++.exe   -g -o CMakeFiles\\Demo.dir\\FileCommand.cpp.obj -c C:\\Users\\HUAWEI\\Desktop\\program\\softwareDesign\\lab1\\FileCommand.cpp",
+  "file": "C:/Users/HUAWEI/Desktop/program/softwareDesign/lab1/FileCommand.cpp"
 },
 {
   "directory": "C:/Users/HUAWEI/Desktop/program/softwareDesign/lab1/build",
