@@ -355,7 +355,6 @@ int pre_process_test(vector<string> commands)
         else if (command.find("undo") == 0)
         {
             history.push_back(getTime() + command);
-            int au = history[history.size() - 2].find("append-tail");
             if (history[history.size() - 2].find("insert ")==18)
             {
                 string a = history[history.size() - 2];
@@ -399,6 +398,37 @@ int pre_process_test(vector<string> commands)
             {
                 cout << "您只能撤销插入和删除操作"<<endl;
                 history.pop_back();//删掉的是之前写的 undo 的history,因为这个undo并没有执行
+            }
+        }
+        else if (command.find("redo") == 0)
+        {
+            if(history[history.size()-2].find("undo")==18){
+                history.push_back(getTime() + command);
+                if (history[history.size() - 2].find("insert ")==18)
+                {
+                    string a = history[history.size() - 2];
+                    int temp1 = a.find("insert ")+7;
+                    a = a.substr(temp1);
+                    a = a.substr(0,a.find(" "));//a是表示第几行
+                    deleteCommand *commandA = new deleteCommand();
+                    Invoker invoker;
+                    invoker.setDeleteCommand(commandA);
+                    invoker.executeDeleteCommand(stoi(a));//delete自动写了history
+                }
+                else if (history[history.size() - 2].find("delete")==18)
+                {
+                    string inner_process = history[history.size() - 2];
+                    inner_process = inner_process.substr(inner_process.find("delete")+7);
+                    int number_line = stoi(inner_process.substr(0, inner_process.find_first_of(" ")));//number是代表第几行
+                    string text = inner_process.substr(inner_process.find_first_of(" ")+1);//text是被删掉的内容
+                    insertCommand *commandA = new insertCommand;
+                    Invoker invoker;
+                    invoker.setInsertCommand(commandA);
+                    invoker.executeInsertCommand(number_line, text);
+                    delete commandA;
+                    inner_process = "insert "+inner_process;//这里变成undo实际上执行的操作
+                    history.push_back(getTime() + inner_process);
+                }
             }
         }
     }
@@ -489,9 +519,9 @@ int testCommandUndo(){
     commands.push_back(str);
     str = "append-head to be the head";
     commands.push_back(str);
-    str = "delete 1";
-    commands.push_back(str);
     str = "undo \n";
+    commands.push_back(str);
+    str = "redo \n";
     commands.push_back(str);
     str = "save \n";
     commands.push_back(str);
