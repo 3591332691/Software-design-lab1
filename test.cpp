@@ -302,7 +302,7 @@ int pre_process_test(vector<string> commands)
                 insertCommand *commandA = new insertCommand;
                 Invoker invoker;
                 invoker.setInsertCommand(commandA);
-                invoker.executeInsertCommand(currentFileContents.size()+1, command);
+                invoker.executeInsertCommand(currentFileContents.size(), command);
                 delete commandA;
                 command = "insert " + to_string(currentFileContents.size()-1) + " " + command;
                 //cout << "##Command被重写入history为" << command << endl;
@@ -445,12 +445,49 @@ int pre_process_test(vector<string> commands)
                     Invoker invoker;
                     invoker.setDisplayCommand(commandA);
                     invoker.executeListTreeCommand();
+                    history.push_back(getTime() + command);
         }
         else if (command.find("list") == 0){
                     Display *commandA = new Display;
                     Invoker invoker;
                     invoker.setDisplayCommand(commandA);
                     invoker.executeListCommand();
+                    history.push_back(getTime() + command);
+        }
+        else if (command.find("dir-tree") == 0){
+                    string dir;
+                    if (command.back() == '\n') {
+                        command = command.substr(0, command.length() - 1);
+                    }
+                    if (command.find(" ")>0&&command.substr(command.find(" ")+1)!="")//有指定目录
+                    {
+                        dir = command.substr(command.find(" ")+1);
+                    }
+                    else
+                    {
+                        dir = "root";
+                    }
+                    Display *commandA = new Display;
+                    Invoker invoker;
+                    invoker.setDisplayCommand(commandA);
+                    invoker.executeListDirTreeCommand(dir);
+                    history.push_back(getTime() + command);
+        }
+        else if (command.find("history") == 0){
+                    int number;
+                    if (command.back() == '\n') {
+                        command = command.substr(0, command.length() - 1);
+                    }
+                    if (command.find(" ")>0&&command.substr(command.find(" ")+1)!="")//有指定行数
+                    {
+                        string a = command.substr(command.find(" ")+1);
+                        number = stoi(command.substr(command.find(" ")+1));
+                    }
+                    else number = -1;//全输出
+                    for(int i = 0;i<history.size()&&i<number;i++){
+                        cout<<history[history.size()-1-i]<<endl;
+                    }
+
         }
     }
     return 0;
@@ -568,7 +605,9 @@ int testCommandList()
     commands.push_back(str);
     str = "append-tail ### Adobe";
     commands.push_back(str);
-    str = "list-tree \n";
+    str = "dir-tree \n";
+    commands.push_back(str);
+    str = "dir-tree ⼯具箱\n";
     commands.push_back(str);
     pre_process_test(commands);
     return 0;
@@ -591,6 +630,175 @@ int initial()
     history.clear();
     return 0;
 }
+
+int test1(){
+    commands.clear();
+    string str;
+    str = "load test1.md" ;
+    commands.push_back(str);
+    str = "insert ## 程序设计";
+    commands.push_back(str);
+    str = "append-head # 我的资源";
+    commands.push_back(str);
+    str = "append-tail ### 软件设计";
+    commands.push_back(str);
+    str = "append-tail #### 设计模式";
+    commands.push_back(str);
+    str = "append-tail 1. 观察者模式";
+    commands.push_back(str);
+    str = "append-tail 3. 单例模式";
+    commands.push_back(str);
+    str = "insert 6 2. 策略模式";
+    commands.push_back(str);
+    str = "delete 单例模式";
+    commands.push_back(str);
+    str = "append-tail 3. 组合模式";
+    commands.push_back(str);
+    str = "list-tree";
+    commands.push_back(str);
+    str = "append-tail ## ⼯具箱";
+    commands.push_back(str);
+    str = "append-tail ### Adobe";
+    commands.push_back(str);
+    str = "list-tree";
+    commands.push_back(str);
+    str = "save";
+    commands.push_back(str);
+    pre_process_test(commands);
+    return 0;
+}
+int test2(){
+    commands.clear();
+    string str;
+    str = "load test2.md" ;
+    commands.push_back(str);
+    str = "append-head # 旅⾏清单";
+    commands.push_back(str);
+    str = "append-tail ## 亚洲";
+    commands.push_back(str);
+    str = "append-tail 1. 中国";
+    commands.push_back(str);
+    str = "append-tail 2. ⽇本";
+    commands.push_back(str);
+    str = "delete 亚洲";
+    commands.push_back(str);
+    str = "undo";
+    commands.push_back(str);
+    str = "redo";
+    commands.push_back(str);
+    str = "list-tree";
+    commands.push_back(str);
+    str = "save";
+    commands.push_back(str);
+    pre_process_test(commands);
+    return 0;
+}
+int test3(){
+    commands.clear();
+    string str;
+    str = "load test3.md" ;
+    commands.push_back(str);
+    str = "append-head # 书籍推荐";
+    commands.push_back(str);
+    str = "append-tail * 《深入理解计算机系统》";
+    commands.push_back(str);
+    str = "undo";
+    commands.push_back(str);
+    str = "append-tail ## 编程";
+    commands.push_back(str);
+    str = "append-tail * 《设计模式的艺术》";
+    commands.push_back(str);
+    str = "redo";
+    commands.push_back(str);
+    str = "list-tree";
+    commands.push_back(str);
+    str = "append-tail * 《云原⽣：运⽤容器、函数计算和数据构建下⼀代应⽤》";
+    commands.push_back(str);
+    str = "append-tail * 《深入理解Java虚拟机》";
+    commands.push_back(str);
+    str = "undo";
+    commands.push_back(str);
+    str = "redo";
+    commands.push_back(str);
+    str = "list-tree";
+    commands.push_back(str);
+    str = "save";
+    commands.push_back(str);
+    pre_process_test(commands);
+    return 0;
+}
+int test4(){
+    commands.clear();
+    string str;
+    str = "load test4.md" ;
+    commands.push_back(str);
+    str = "append-head # 旅⾏清单";
+    commands.push_back(str);
+    str = "append-tail ## 亚洲";
+    commands.push_back(str);
+    str = "save";
+    commands.push_back(str);
+    str = "append-tail 1. 中国";
+    commands.push_back(str);
+    str = "append-tail 2. ⽇本";
+    commands.push_back(str);
+    str = "append-tail ## 欧洲";
+    commands.push_back(str);
+    str = "load test3.md";
+    commands.push_back(str);
+    str = "list-tree";
+    commands.push_back(str);
+    str = "load test4.md";
+    commands.push_back(str);
+    str = "list-tree";
+    commands.push_back(str);
+    pre_process_test(commands);
+    return 0;
+}
+int test5(){
+    commands.clear();
+    string str;
+    str = "load test5.md" ;
+    commands.push_back(str);
+    str = "append-head # 旅⾏清单";
+    commands.push_back(str);
+    str = "append-tail ## 欧洲";
+    commands.push_back(str);
+    str = "insert 2 ## 亚洲";
+    commands.push_back(str);
+    str = "insert 3 1. 中国";
+    commands.push_back(str);
+    str = "insert 4 2. ⽇本";
+    commands.push_back(str);
+    str = "save";
+    commands.push_back(str);
+    str = "undo";
+    commands.push_back(str);
+    str = "list-tree";
+    commands.push_back(str);
+    str = "delete 亚洲";
+    commands.push_back(str);
+    str = "list-tree";
+    commands.push_back(str);
+    str = "history 2";
+    commands.push_back(str);
+    str = "undo";
+    commands.push_back(str);
+    str = "list-tree";
+    commands.push_back(str);
+    str = "redo";
+    commands.push_back(str);
+    str = "list-tree";
+    commands.push_back(str);
+    str = "redo";
+    commands.push_back(str);
+    str = "list-tree";
+    commands.push_back(str);
+    str = "save";
+    commands.push_back(str);
+    pre_process_test(commands);
+    return 0;
+}
 int main()
 {
     // testCommandLoad();
@@ -599,7 +807,7 @@ int main()
     // testCommandAppend();
     // testCommandDelete();
     initial();
-    testCommandList();
-
+    //testCommandList();
+    test5();
     return 0;
 }

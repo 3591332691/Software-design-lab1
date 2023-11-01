@@ -7,11 +7,15 @@ using namespace std;
 extern vector <string> currentFileContents;
 extern vector <string> history;
 void insertCommand::insert(int lineNumber, string str){
-    if (lineNumber>currentFileContents.size())
+    int a = lineNumber;
+    if(lineNumber ==1&&currentFileContents.size()==1&&currentFileContents[0] =="")
     {
-        currentFileContents.resize(lineNumber);
-        currentFileContents.insert(currentFileContents.begin() + lineNumber-1, str);
-        currentFileContents.resize(currentFileContents.size() - 1);
+        currentFileContents[0] = str;
+    }
+    else if (a>currentFileContents.size())
+    {
+        currentFileContents.resize(a);
+        currentFileContents[a-1] = str;
     }
     else
     currentFileContents.insert(currentFileContents.begin() + lineNumber-1, str);
@@ -27,16 +31,18 @@ void deleteCommand::delete_(int n)
         currentFileContents[i] = currentFileContents[i+1];
     }
         currentFileContents.pop_back();
-        cout<<"删除了第"<<n<<"行"<<endl;
+        //cout<<"删除了第"<<n<<"行"<<endl;
     }
 }
 void deleteCommand::delete_(string s)
 {
     int temp = 0;
     for(int i = 0; i < currentFileContents.size(); i++){
-        if(s == currentFileContents[i]){
-            string tempCommand = "delete "+to_string(i+1)+" "+currentFileContents[i];
-            history.push_back(getTime()+tempCommand);//写入history
+        int au = currentFileContents[i].find(s);
+        if(static_cast<int>(currentFileContents[i].find(s))>=0){
+            //string tempCommand = "delete "+to_string(i+1)+" "+currentFileContents[i];
+            //history.push_back(getTime()+tempCommand);//写入history
+            //cout<<au<<endl;
             delete_(i+1);
             temp = 1;
         }

@@ -39,13 +39,14 @@ void generateTree(struct TreeNode* preNode, int& index, int level) {
             struct TreeNode* findtheParent = preNode;
             while(findtheParent->parent!=nullptr)
             {
-                findtheParent= findtheParent->parent;
-                if(findtheParent->level == currentLevel||findtheParent->parent->level<currentLevel)
+                
+                if(findtheParent->level >= currentLevel&&findtheParent->parent->level<currentLevel)
                 {
                     findtheParent->parent->children.push_back(currentNode);
                     currentNode->parent = findtheParent->parent;
                     break;
                 }
+                findtheParent= findtheParent->parent;
             }
             index++;
             generateTree(currentNode,index,currentLevel);
@@ -68,8 +69,7 @@ void printTreeStructure(struct TreeNode* node, int indent = 0) {
         for(auto child:node->children){
         printTreeStructure(child);
     }
-    }
-    
+    } 
 }
 
 void Display::display(){
@@ -87,4 +87,38 @@ void Display::display_tree(){
     generateTree(root,index,0);
     printTreeStructure(root);
     delete root;
+}
+void findTheDir(string dir,struct TreeNode* Node,struct TreeNode*&dirNode){
+    if(Node->title==dir) dirNode = Node;
+    else{
+        if(Node->children.size()>0)
+        {
+            for(auto child:Node->children){
+                findTheDir(dir, child,dirNode);
+            }
+        }
+    } 
+}
+
+void  Display::display_dir_tree(string dir){//遍历树，返回node
+    int index = 0;
+    //struct TreeNode root;
+    struct TreeNode* root = new TreeNode();
+    root->level = 0;
+    root->title = "root";
+    generateTree(root,index,0);
+    if(dir=="root"){
+        display_tree();
+    }
+    else{
+        struct TreeNode* dirNode = nullptr;
+        findTheDir(dir,root,dirNode);
+        if(dirNode==nullptr){
+            cout<<"没有找到"<<dir<<"标题"<<endl;
+        }
+        else printTreeStructure(dirNode);
+    }
+    
+    delete root;
+
 }

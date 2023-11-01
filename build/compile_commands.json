@@ -23,5 +23,10 @@
   "directory": "C:/Users/HUAWEI/Desktop/program/softwareDesign/lab1/build",
   "command": "D:\\Mingw-w64\\mingw64\\bin\\g++.exe   -g -o CMakeFiles\\Demo.dir\\tool.cpp.obj -c C:\\Users\\HUAWEI\\Desktop\\program\\softwareDesign\\lab1\\tool.cpp",
   "file": "C:/Users/HUAWEI/Desktop/program/softwareDesign/lab1/tool.cpp"
+},
+{
+  "directory": "C:/Users/HUAWEI/Desktop/program/softwareDesign/lab1/build/test",
+  "command": "D:\\Mingw-w64\\mingw64\\bin\\g++.exe   -g -o CMakeFiles\\Test.dir\\tmain.cpp.obj -c C:\\Users\\HUAWEI\\Desktop\\program\\softwareDesign\\lab1\\test\\tmain.cpp",
+  "file": "C:/Users/HUAWEI/Desktop/program/softwareDesign/lab1/test/tmain.cpp"
 }
 ]

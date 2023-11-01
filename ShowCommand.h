@@ -18,6 +18,7 @@ class Display : public ShowCommand {
     public:
     void display() override;
     void display_tree();
+    void display_dir_tree(std::string str);
 };
 
 #endif

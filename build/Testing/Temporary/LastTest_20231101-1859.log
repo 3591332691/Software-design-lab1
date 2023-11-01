@@ -1,0 +1,19 @@
+Start testing: Nov 02 03:46 中国标准时间
+----------------------------------------------------------
+Failed to change working directory to /test : No such file or directory
+1/1 Testing: MyTest
+1/1 Test: MyTest
+Command: ""
+Directory: /test
+"MyTest" start time: 
+Output:
+----------------------------------------------------------
+<end of output>
+Test time =   0.00 sec
+----------------------------------------------------------
+Test Passed.
+"MyTest" end time: Nov 02 03:46 中国标准时间
+"MyTest" time elapsed: 00:00:00
+----------------------------------------------------------
+
+End testing: Nov 02 03:46 中国标准时间

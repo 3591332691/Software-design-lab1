@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Site BuildName="(empty)"
+	BuildStamp="20231101-1859-Experimental"
+	Name="(empty)"
+	Generator="ctest-3.24.2"
+	CompilerName=""
+	CompilerVersion=""
+	OSName="Windows"
+	Hostname="mbm-yesh-293313"
+	OSRelease=" Personal"
+	OSVersion=" (Build 19045)"
+	OSPlatform="AMD64"
+	Is64Bits="1"
+	VendorString="GenuineIntel"
+	VendorID="Intel Corporation"
+	FamilyID="6"
+	ModelID="12"
+	ProcessorCacheSize="-1"
+	NumberOfLogicalCPU="8"
+	NumberOfPhysicalCPU="4"
+	TotalVirtualMemory="32366"
+	TotalPhysicalMemory="16183"
+	LogicalProcessorsPerPhysical="2"
+	ProcessorClockFrequency="2807"
+	>
+	<Testing>
+		<StartDateTime>Nov 02 03:46 [NON-UTF-8-BYTE-0xD6]й[NON-UTF-8-BYTE-0xFA][NON-UTF-8-BYTE-0xB1][NON-UTF-8-BYTE-0xEA]׼ʱ[NON-UTF-8-BYTE-0xBC][NON-UTF-8-BYTE-0xE4]</StartDateTime>
+		<StartTestTime>1698867985</StartTestTime>
+		<TestList>
+			<Test>.//test/MyTest</Test>
+		</TestList>
+		<Test Status="notrun">
+			<Name>MyTest</Name>
+			<Path>.//test</Path>
+			<FullName>.//test/MyTest</FullName>
+			<FullCommandLine></FullCommandLine>
+			<Results>
+				<NamedMeasurement type="numeric/double" name="Processors">
+					<Value>1</Value>
+				</NamedMeasurement>
+				<NamedMeasurement type="text/string" name="Completion Status">
+					<Value>Failed to change working directory</Value>
+				</NamedMeasurement>
+				<NamedMeasurement type="text/string" name="Command Line">
+					<Value></Value>
+				</NamedMeasurement>
+				<NamedMeasurement type="text/string" name="Environment">
+					<Value></Value>
+				</NamedMeasurement>
+				<Measurement>
+					<Value>Failed to change working directory to /test : No such file or directory</Value>
+				</Measurement>
+			</Results>
+		</Test>
+		<EndDateTime>Nov 02 03:46 [NON-UTF-8-BYTE-0xD6]й[NON-UTF-8-BYTE-0xFA][NON-UTF-8-BYTE-0xB1][NON-UTF-8-BYTE-0xEA]׼ʱ[NON-UTF-8-BYTE-0xBC][NON-UTF-8-BYTE-0xE4]</EndDateTime>
+		<EndTestTime>1698867985</EndTestTime>
+		<ElapsedMinutes>0</ElapsedMinutes>
+	</Testing>
+</Site>

@@ -25,7 +25,7 @@ void mdFile::load() {
     }
 }
 void mdFile::save(){
-    ofstream file(filename,ios::out);
+    ofstream file(filename,ios::trunc);
     if (file.is_open()) 
     {
         for(auto content : currentFileContents)

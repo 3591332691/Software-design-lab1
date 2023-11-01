@@ -47,5 +47,8 @@ public:
     void executeListTreeCommand(){
         display->display_tree();
     }
+    void executeListDirTreeCommand(std::string str){
+        display->display_dir_tree( str);
+    }
 };
 #endif
