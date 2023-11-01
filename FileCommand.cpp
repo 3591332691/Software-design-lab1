@@ -35,7 +35,7 @@ void mdFile::save(){
     }
     else
     {
-        printf("save failed\n");
+        printf("save failed --file not open\n");
     }
 
 }
