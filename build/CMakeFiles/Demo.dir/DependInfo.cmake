@@ -10,6 +10,7 @@ set(CMAKE_DEPENDS_LANGUAGES
 set(CMAKE_DEPENDS_DEPENDENCY_FILES
   "C:/Users/HUAWEI/Desktop/program/softwareDesign/lab1/ContentsCommand.cpp" "CMakeFiles/Demo.dir/ContentsCommand.cpp.obj" "gcc" "CMakeFiles/Demo.dir/ContentsCommand.cpp.obj.d"
   "C:/Users/HUAWEI/Desktop/program/softwareDesign/lab1/FileCommand.cpp" "CMakeFiles/Demo.dir/FileCommand.cpp.obj" "gcc" "CMakeFiles/Demo.dir/FileCommand.cpp.obj.d"
+  "C:/Users/HUAWEI/Desktop/program/softwareDesign/lab1/ShowCommand.cpp" "CMakeFiles/Demo.dir/ShowCommand.cpp.obj" "gcc" "CMakeFiles/Demo.dir/ShowCommand.cpp.obj.d"
   "C:/Users/HUAWEI/Desktop/program/softwareDesign/lab1/test.cpp" "CMakeFiles/Demo.dir/test.cpp.obj" "gcc" "CMakeFiles/Demo.dir/test.cpp.obj.d"
   "C:/Users/HUAWEI/Desktop/program/softwareDesign/lab1/tool.cpp" "CMakeFiles/Demo.dir/tool.cpp.obj" "gcc" "CMakeFiles/Demo.dir/tool.cpp.obj.d"
   )

@@ -1,6 +1,7 @@
 #include <vector>
 #include<iostream>
 #include <time.h>
+#include <regex>
 #include<string>
 #include "tool.h"
 using namespace std;
@@ -21,3 +22,13 @@ int checkWhichCommand(string a){
     }
     return -1;
 }
+int find_the_level(string line)
+{
+    regex pattern("^(#+ )");
+    smatch match;
+    if (regex_search(line, match, pattern)) {
+        string matchedString = match.str();
+        return matchedString.length() - 2;  // 减去空格和 #
+    }
+    return 0;
+};

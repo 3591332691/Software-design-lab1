@@ -176,6 +176,30 @@ FileCommand.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\Demo.dir\build.make CMakeFiles/Demo.dir/FileCommand.cpp.s
 .PHONY : FileCommand.cpp.s
 
+ShowCommand.obj: ShowCommand.cpp.obj
+.PHONY : ShowCommand.obj
+
+# target to build an object file
+ShowCommand.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Demo.dir\build.make CMakeFiles/Demo.dir/ShowCommand.cpp.obj
+.PHONY : ShowCommand.cpp.obj
+
+ShowCommand.i: ShowCommand.cpp.i
+.PHONY : ShowCommand.i
+
+# target to preprocess a source file
+ShowCommand.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Demo.dir\build.make CMakeFiles/Demo.dir/ShowCommand.cpp.i
+.PHONY : ShowCommand.cpp.i
+
+ShowCommand.s: ShowCommand.cpp.s
+.PHONY : ShowCommand.s
+
+# target to generate assembly for a file
+ShowCommand.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Demo.dir\build.make CMakeFiles/Demo.dir/ShowCommand.cpp.s
+.PHONY : ShowCommand.cpp.s
+
 test.obj: test.cpp.obj
 .PHONY : test.obj
 
@@ -239,6 +263,9 @@ help:
 	@echo ... FileCommand.obj
 	@echo ... FileCommand.i
 	@echo ... FileCommand.s
+	@echo ... ShowCommand.obj
+	@echo ... ShowCommand.i
+	@echo ... ShowCommand.s
 	@echo ... test.obj
 	@echo ... test.i
 	@echo ... test.s

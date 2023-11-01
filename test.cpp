@@ -87,7 +87,7 @@ int testCommand(vector<string> commands)
                 invoker.setInsertCommand(commandA);
                 invoker.executeInsertCommand(number_line, text);
                 delete commandA;
-                cout << "##Command被重写入history为" << command << endl;
+                //cout << "##Command被重写入history为" << command << endl;
                 history.push_back(getTime() + command);
             }
             else if (tempFlag == -1) // insert到末尾
@@ -98,7 +98,7 @@ int testCommand(vector<string> commands)
                 invoker.executeInsertCommand(currentFileContents.size(), command);
                 delete commandA;
                 command = "insert " + to_string(currentFileContents.size()) + " " + command;
-                cout << "##Command被重写入history为" << command << endl;
+                //cout << "##Command被重写入history为" << command << endl;
                 history.push_back(getTime() + command);
             }
             else
@@ -225,9 +225,14 @@ int pre_process_test(vector<string> commands)
         {
             regex pattern("^([a-zA-Z]:(([\\\\/])[^\\\\/:*?<>|]+)*([\\\\/])[^\\\\/:*?<>|]+\\.[^\\\\/:*?<>|]+,)*[a-zA-Z]:(([\\\\/])[^\\\\/:*?<>|]+)*([\\\\/])[^\\\\/:*?<>|]+\\.[^\\\\/:*?<>|]+$");
             regex pattern1("^[\\.]{1,2}((/){1}[\\w]+[\\.]{0,1}[\\w]+)+$");
+            regex pattern2("^[\\w\\-]+\\.[a-zA-Z]{2,4}$");
             string filePath = command.substr(command.find("load") + 5);
-            filePath = filePath.substr(0, filePath.length() - 1);
-            if ((regex_match(filePath, pattern) || regex_match(filePath, pattern1)) && filePath.find(".md") == (filePath.length() - 3))
+            int a = filePath.find('\n');
+            if(a>0)
+            {
+                filePath = filePath.substr(0, filePath.length() - 1);
+            }
+            if ((regex_match(filePath, pattern) || regex_match(filePath, pattern1)||regex_match(filePath, pattern2)) && filePath.find(".md") == (filePath.length() - 3))
             {
                 FileCommand *commandA = new mdFile(filePath);
                 Invoker invoker;
@@ -240,7 +245,7 @@ int pre_process_test(vector<string> commands)
             }
             else
             {
-                cout << "路径" << filePath << "有非法字符" << endl;
+                cout << "路径" << filePath << "有非法字符或者路径不正确" << endl;
             }
         }
         else if (command.find("save") == 0)
@@ -289,7 +294,7 @@ int pre_process_test(vector<string> commands)
                 invoker.executeInsertCommand(number_line, text);
                 delete commandA;
                 command = "insert " + to_string(number_line) + " " + text;
-                cout << "##Command被重写入history为" << command << endl;
+                //cout << "##Command被重写入history为" << command << endl;
                 history.push_back(getTime() + command);
             }
             else if (tempFlag == -1) // insert到末尾
@@ -297,10 +302,10 @@ int pre_process_test(vector<string> commands)
                 insertCommand *commandA = new insertCommand;
                 Invoker invoker;
                 invoker.setInsertCommand(commandA);
-                invoker.executeInsertCommand(currentFileContents.size(), command);
+                invoker.executeInsertCommand(currentFileContents.size()+1, command);
                 delete commandA;
-                command = "insert " + to_string(currentFileContents.size()) + " " + command;
-                cout << "##Command被重写入history为" << command << endl;
+                command = "insert " + to_string(currentFileContents.size()-1) + " " + command;
+                //cout << "##Command被重写入history为" << command << endl;
                 history.push_back(getTime() + command);
             }
             else
@@ -430,6 +435,22 @@ int pre_process_test(vector<string> commands)
                     history.push_back(getTime() + inner_process);
                 }
             }
+            else
+            {
+                cout<<"error:there is no undo."<<endl;
+            }
+        }
+        else if (command.find("list-tree") == 0){
+                    Display *commandA = new Display;
+                    Invoker invoker;
+                    invoker.setDisplayCommand(commandA);
+                    invoker.executeListTreeCommand();
+        }
+        else if (command.find("list") == 0){
+                    Display *commandA = new Display;
+                    Invoker invoker;
+                    invoker.setDisplayCommand(commandA);
+                    invoker.executeListCommand();
         }
     }
     return 0;
@@ -519,8 +540,6 @@ int testCommandUndo(){
     commands.push_back(str);
     str = "append-head to be the head";
     commands.push_back(str);
-    str = "undo \n";
-    commands.push_back(str);
     str = "redo \n";
     commands.push_back(str);
     str = "save \n";
@@ -530,6 +549,28 @@ int testCommandUndo(){
 }
 int testCommandList()
 {
+    commands.clear();
+    string str;
+    string filename1 = "../testplace/txt1.md";
+    str = "load " + filename1 + "\n";
+    commands.push_back(str);
+    str = "load test1.md";
+    commands.push_back(str);
+    str = "insert ## 程序设计";
+    commands.push_back(str);
+    str = "append-head # 我的资源";
+    commands.push_back(str);
+    str = "append-tail ### 软件设计";
+    commands.push_back(str);
+    str = "append-tail 1. 观察者模式";
+    commands.push_back(str);
+    str = "append-tail ## ⼯具箱";
+    commands.push_back(str);
+    str = "append-tail ### Adobe";
+    commands.push_back(str);
+    str = "list-tree \n";
+    commands.push_back(str);
+    pre_process_test(commands);
     return 0;
 }
 int freeTest()
@@ -558,6 +599,7 @@ int main()
     // testCommandAppend();
     // testCommandDelete();
     initial();
-    testCommandUndo();
+    testCommandList();
+
     return 0;
 }

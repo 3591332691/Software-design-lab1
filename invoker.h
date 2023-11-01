@@ -3,12 +3,14 @@
 #include <string.h>
 #include "FileCommand.h"
 #include "ContentsCommand.h"
+#include "ShowCommand.h"
 #include<iostream>
 class Invoker {
 private:
     FileCommand* fileCommand;
     insertCommand* InsertCommand;
     deleteCommand* DeleteCommand;
+    Display* display;
 public:
     void setFileCommand(FileCommand* cmd) {
         fileCommand = cmd;
@@ -35,6 +37,15 @@ public:
     }
     void executeDeleteCommand(std::string str){
         DeleteCommand->delete_(str);
+    }
+    void setDisplayCommand(Display* cmd){
+        display = cmd;
+    }
+    void executeListCommand(){
+        display->display();
+    }
+    void executeListTreeCommand(){
+        display->display_tree();
     }
 };
 #endif

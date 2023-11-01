@@ -7,7 +7,13 @@ using namespace std;
 extern vector <string> currentFileContents;
 extern vector <string> history;
 void insertCommand::insert(int lineNumber, string str){
-    if (lineNumber>currentFileContents.size())currentFileContents.reserve(lineNumber);
+    if (lineNumber>currentFileContents.size())
+    {
+        currentFileContents.resize(lineNumber);
+        currentFileContents.insert(currentFileContents.begin() + lineNumber-1, str);
+        currentFileContents.resize(currentFileContents.size() - 1);
+    }
+    else
     currentFileContents.insert(currentFileContents.begin() + lineNumber-1, str);
 }
 void deleteCommand::delete_(int n)

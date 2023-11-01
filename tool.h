@@ -7,5 +7,6 @@ using namespace std;
 
 string getTime();
 int checkWhichCommand(std::string command);
+int find_the_level(std::string str);
 
 #endif
