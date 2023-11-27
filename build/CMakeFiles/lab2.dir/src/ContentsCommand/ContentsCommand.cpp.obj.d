@@ -137,7 +137,7 @@ CMakeFiles/lab2.dir/src/ContentsCommand/ContentsCommand.cpp.obj: \
  D:/Mingw-w64/mingw64/lib/gcc/x86_64-w64-mingw32/13.2.0/include/c++/bits/stl_bvector.h \
  D:/Mingw-w64/mingw64/lib/gcc/x86_64-w64-mingw32/13.2.0/include/c++/bits/vector.tcc \
  C:\Users\HUAWEI\Desktop\program\softwareDesign\lab1\src\ContentsCommand\ContentsCommand.h \
- C:/Users/HUAWEI/Desktop/program/softwareDesign/lab1/src/tool\tool.h \
+ C:/Users/HUAWEI/Desktop/program/softwareDesign/lab1/src/tool/tool.h \
  D:/Mingw-w64/mingw64/x86_64-w64-mingw32/include/time.h \
  D:/Mingw-w64/mingw64/x86_64-w64-mingw32/include/_timeval.h \
  D:/Mingw-w64/mingw64/x86_64-w64-mingw32/include/pthread_time.h

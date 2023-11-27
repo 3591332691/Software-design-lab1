@@ -2,12 +2,14 @@
 #include <string>
 #include <vector>
 #include "ContentsCommand.h"
-#include "tool\tool.h"
+#include "tool\\tool.h"
 using namespace std;
 extern vector <string> currentFileContents;
 extern vector <string> history;
+extern vector <string> contentsCommandHistory;
 void insertCommand::insert(int lineNumber, string str){
     int a = lineNumber;
+    contentsCommandHistory.push_back("insert "+to_string(lineNumber)+" "+str);
     if(lineNumber ==1&&currentFileContents.size()==1&&currentFileContents[0] =="")
     {
         currentFileContents[0] = str;
@@ -18,14 +20,19 @@ void insertCommand::insert(int lineNumber, string str){
         currentFileContents[a-1] = str;
     }
     else
-    currentFileContents.insert(currentFileContents.begin() + lineNumber-1, str);
+    {
+        currentFileContents.insert(currentFileContents.begin() + lineNumber-1, str);
+    }
+
+    
 }
 void deleteCommand::delete_(int n)
 {
     if(n>currentFileContents.size()||n<=0)cout<<"找不到第"<<n<<"行"<<endl;
     else{
         string tempCommand = "delete "+to_string(n)+" "+currentFileContents[n-1];
-        history.push_back(getTime()+tempCommand);//写入history
+        contentsCommandHistory.push_back(tempCommand);//写入contents Command History
+        //history.push_back(getTime()+tempCommand);//写入history
         for(int i = n-1;i+1<currentFileContents.size();i++)
     {
         currentFileContents[i] = currentFileContents[i+1];
@@ -40,12 +47,13 @@ void deleteCommand::delete_(string s)
     for(int i = 0; i < currentFileContents.size(); i++){
         int au = currentFileContents[i].find(s);
         if(static_cast<int>(currentFileContents[i].find(s))>=0){
-            //string tempCommand = "delete "+to_string(i+1)+" "+currentFileContents[i];
+            string tempCommand = "delete "+to_string(i+1)+" "+currentFileContents[i];
+            contentsCommandHistory.push_back(tempCommand);
             //history.push_back(getTime()+tempCommand);//写入history
             //cout<<au<<endl;
             delete_(i+1);
             temp = 1;
         }
     }
-    if(temp == 0)cout<<"找不到"<<s<<endl;
+    if(temp == 0)cout<<"delete error: 找不到"<<s<<endl;
 }

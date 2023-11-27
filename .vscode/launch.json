@@ -7,7 +7,7 @@
             "name": "C++ Debug",
             "type": "cppdbg",
             "request": "launch",
-            "program": "${fileDirname}\\${fileBasenameNoExtension}.exe",
+            "program": "C:\\Users\\HUAWEI\\Desktop\\program\\softwareDesign\\lab1\\build\\lab2.exe",
             "args": [],
             "cwd": "${workspaceFolder}",
             "environment": [{

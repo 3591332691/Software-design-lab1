@@ -1,9 +1,9 @@
 #ifndef INVOKER_H
 #define INVOKER_H
 #include <string.h>
-#include "FileCommand\FileCommand.h"
-#include "ContentsCommand\ContentsCommand.h"
-#include "ShowCommand\ShowCommand.h"
+#include "FileCommand\\FileCommand.h"
+#include "ContentsCommand\\ContentsCommand.h"
+#include "ShowCommand\\ShowCommand.h"
 #include<iostream>
 class Invoker {
 private:

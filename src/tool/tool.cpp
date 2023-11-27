@@ -5,8 +5,8 @@
 #include<string>
 #include "tool.h"
 using namespace std;
-
-
+extern vector <string> contentsCommandHistory;
+extern vector <string> currentFileContents;
 vector<string> commandsSummary = {"load","save","insert","append-","delete","undo","redo","list-tree",
 "list","dir-tree","history"};
 /// @brief 
@@ -33,3 +33,15 @@ int find_the_level(string line)
     }
     return 0;
 };
+void showCurrentFileContents(){
+    cout<<"show current file contents"<<endl;
+    for(auto a:currentFileContents){
+        cout<<a<<endl;
+    }
+}
+void showContentsCommandHistory(){
+cout<<"show Contents Command History"<<endl;
+    for(auto a:contentsCommandHistory){
+        cout<<a<<endl;
+    }
+}

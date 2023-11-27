@@ -13,6 +13,7 @@ vector<string> commands; // for test
 string currentFileName = "";
 vector<string> currentFileContents;
 vector<string> history;
+vector<string> contentsCommandHistory;//for undo&redo only have insert&delete
 int testCommand(vector<string> commands)
 {
     for (auto command : commands)
@@ -180,7 +181,11 @@ int testCommandUndo(){
     commands.push_back(str);
     str = "append-head to be the head";
     commands.push_back(str);
-    str = "redo \n";
+    str = "delete to be the head";
+    commands.push_back(str);
+    str = "undo \n";
+    //commands.push_back(str);
+    //str = "redo \n";
     commands.push_back(str);
     str = "save \n";
     commands.push_back(str);
@@ -231,6 +236,7 @@ int initial()
     currentFileName = "";
     currentFileContents.clear();
     history.clear();
+    contentsCommandHistory.clear();
     return 0;
 }
 
@@ -411,6 +417,6 @@ int main()
     // testCommandDelete();
     initial();
     //testCommandList();
-    testCommandLoad();
+    testCommandUndo();
     return 0;
 }

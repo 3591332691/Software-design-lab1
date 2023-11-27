@@ -7,8 +7,7 @@
             "args": [
                 "-fdiagnostics-color=always",
                 "-g",
-                "test.cpp",
-                "src/*.cpp",  // 使用通配符匹配所有的 .cpp 文件
+                "${fileDirname}/*.cpp",  // 使用通配符匹配所有的 .cpp 文件
                 "-o",
                 "${fileDirname}\\${fileBasenameNoExtension}.exe",
                 "-lstdc++"

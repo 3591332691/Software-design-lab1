@@ -27,3 +27,5 @@ set(HEADERS
 )
 #把头文件加入
 target_include_directories(lab2 PUBLIC ${HEADERS})
+# 添加调试信息
+set(CMAKE_BUILD_TYPE Debug)

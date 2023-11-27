@@ -187,9 +187,9 @@ CMakeFiles/lab2.dir/test.cpp.obj: \
  C:/Users/HUAWEI/Desktop/program/softwareDesign/lab1/src/invoker.h \
  D:/Mingw-w64/mingw64/x86_64-w64-mingw32/include/string.h \
  D:/Mingw-w64/mingw64/x86_64-w64-mingw32/include/sec_api/string_s.h \
- C:/Users/HUAWEI/Desktop/program/softwareDesign/lab1/src/FileCommand\FileCommand.h \
- C:/Users/HUAWEI/Desktop/program/softwareDesign/lab1/src/ContentsCommand\ContentsCommand.h \
- C:/Users/HUAWEI/Desktop/program/softwareDesign/lab1/src/ShowCommand\ShowCommand.h \
+ C:/Users/HUAWEI/Desktop/program/softwareDesign/lab1/src/FileCommand/FileCommand.h \
+ C:/Users/HUAWEI/Desktop/program/softwareDesign/lab1/src/ContentsCommand/ContentsCommand.h \
+ C:/Users/HUAWEI/Desktop/program/softwareDesign/lab1/src/ShowCommand/ShowCommand.h \
  C:/Users/HUAWEI/Desktop/program/softwareDesign/lab1/src/ContentsCommand/ContentsCommand.h \
  C:/Users/HUAWEI/Desktop/program/softwareDesign/lab1/src/tool/tool.h \
  C:/Users/HUAWEI/Desktop/program/softwareDesign/lab1/src/CommandParser/CommandParser.h
