@@ -1,6 +1,7 @@
 #include <iostream>
 #include <vector>
 #include <regex>
+#include <fstream>
 #include <stdio.h>
 #include <ctype.h>
 #include "src\\FileCommand\\FileCommand.h"
@@ -8,12 +9,17 @@
 #include "src\\ContentsCommand\\ContentsCommand.h"
 #include "src\\tool\\tool.h"
 #include "src\\CommandParser\\CommandParser.h"
+#include "src\\File\\WorkSpace.h"
+#include "src\\constants.h"
 using namespace std;
 vector<string> commands; // for test
 string currentFileName = "";
 vector<string> currentFileContents;
 vector<string> history;
 vector<string> contentsCommandHistory;//for undo&redo only have insert&delete
+vector<WorkSpace*> workspaces;
+vector<string> workingTime;
+int currentWorkSpaceId = 0;
 int testCommand(vector<string> commands)
 {
     for (auto command : commands)
@@ -68,10 +74,10 @@ int testCommand(vector<string> commands)
             a.CommandParseList_tree(command);
             break;
         }
-        case 8://list
+        case 8://list-workspace
         {
             CommandParser a;
-            a.CommandParseList(command);
+            a.CommandParseList_workspace(command);
             break;
         }
         case 9://dir-tree
@@ -84,6 +90,30 @@ int testCommand(vector<string> commands)
         {
             CommandParser a;
             a.CommandParseHistory(command);
+            break;
+        }
+        case 11://stats
+        {
+            CommandParser a;
+            a.CommandParseExit(command);
+            break;
+        }
+        case 12://list
+        {   
+            CommandParser a;
+            a.CommandParseList(command);
+            break;
+        }
+        case 14://close
+        {   
+            CommandParser a;
+            a.CommandParseClose(command);
+            break;
+        }
+        case 15://exit
+        {
+            CommandParser a;
+            a.CommandParseExit(command);
             break;
         }
         default:
@@ -223,8 +253,9 @@ int testCommandList()
 int freeTest()
 {
     string input;
-    while (cin >> input && input != "end")
+    while (getline(cin, input) && input != "eof")
     {
+        commands.clear();
         commands.push_back(input);
         testCommand(commands);
     }
@@ -417,6 +448,34 @@ int main()
     // testCommandDelete();
     initial();
     //testCommandList();
-    testCommandUndo();
+    //testCommandUndo();
+    
+
+    //start session的时候写入两个log开头
+    string sessionStart = "session start at ";
+    sessionStart += getTime();
+    ofstream file1(historylogPath, ios::app);
+    if (!file1.is_open()) {
+        // 文件打开失败，处理错误
+        cout<<"Error:打开historyLog失败"<<endl;
+    }
+    else{
+        file1 << sessionStart << endl;
+        // 关闭文件
+        file1.close();
+    }
+    ofstream file2(worktimeLogPath, ios::app);
+    if (!file2.is_open()) {
+        // 文件打开失败，处理错误
+        cout<<"Error:打开historyLog失败"<<endl;
+    }
+    else{
+        file2 << sessionStart << endl;
+        // 关闭文件
+        file2.close();
+    }
+
+
+    freeTest();
     return 0;
 }

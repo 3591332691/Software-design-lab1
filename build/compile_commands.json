@@ -16,8 +16,28 @@
 },
 {
   "directory": "C:/Users/HUAWEI/Desktop/program/softwareDesign/lab1/build",
+  "command": "D:\\Mingw-w64\\mingw64\\bin\\g++.exe  @CMakeFiles/lab2.dir/includes_CXX.rsp -g -o CMakeFiles\\lab2.dir\\src\\File\\File.cpp.obj -c C:\\Users\\HUAWEI\\Desktop\\program\\softwareDesign\\lab1\\src\\File\\File.cpp",
+  "file": "C:/Users/HUAWEI/Desktop/program/softwareDesign/lab1/src/File/File.cpp"
+},
+{
+  "directory": "C:/Users/HUAWEI/Desktop/program/softwareDesign/lab1/build",
+  "command": "D:\\Mingw-w64\\mingw64\\bin\\g++.exe  @CMakeFiles/lab2.dir/includes_CXX.rsp -g -o CMakeFiles\\lab2.dir\\src\\File\\WorkSpace.cpp.obj -c C:\\Users\\HUAWEI\\Desktop\\program\\softwareDesign\\lab1\\src\\File\\WorkSpace.cpp",
+  "file": "C:/Users/HUAWEI/Desktop/program/softwareDesign/lab1/src/File/WorkSpace.cpp"
+},
+{
+  "directory": "C:/Users/HUAWEI/Desktop/program/softwareDesign/lab1/build",
   "command": "D:\\Mingw-w64\\mingw64\\bin\\g++.exe  @CMakeFiles/lab2.dir/includes_CXX.rsp -g -o CMakeFiles\\lab2.dir\\src\\FileCommand\\FileCommand.cpp.obj -c C:\\Users\\HUAWEI\\Desktop\\program\\softwareDesign\\lab1\\src\\FileCommand\\FileCommand.cpp",
   "file": "C:/Users/HUAWEI/Desktop/program/softwareDesign/lab1/src/FileCommand/FileCommand.cpp"
+},
+{
+  "directory": "C:/Users/HUAWEI/Desktop/program/softwareDesign/lab1/build",
+  "command": "D:\\Mingw-w64\\mingw64\\bin\\g++.exe  @CMakeFiles/lab2.dir/includes_CXX.rsp -g -o CMakeFiles\\lab2.dir\\src\\Session\\Session.cpp.obj -c C:\\Users\\HUAWEI\\Desktop\\program\\softwareDesign\\lab1\\src\\Session\\Session.cpp",
+  "file": "C:/Users/HUAWEI/Desktop/program/softwareDesign/lab1/src/Session/Session.cpp"
+},
+{
+  "directory": "C:/Users/HUAWEI/Desktop/program/softwareDesign/lab1/build",
+  "command": "D:\\Mingw-w64\\mingw64\\bin\\g++.exe  @CMakeFiles/lab2.dir/includes_CXX.rsp -g -o CMakeFiles\\lab2.dir\\src\\SessionCommand\\SessionCommand.cpp.obj -c C:\\Users\\HUAWEI\\Desktop\\program\\softwareDesign\\lab1\\src\\SessionCommand\\SessionCommand.cpp",
+  "file": "C:/Users/HUAWEI/Desktop/program/softwareDesign/lab1/src/SessionCommand/SessionCommand.cpp"
 },
 {
   "directory": "C:/Users/HUAWEI/Desktop/program/softwareDesign/lab1/build",

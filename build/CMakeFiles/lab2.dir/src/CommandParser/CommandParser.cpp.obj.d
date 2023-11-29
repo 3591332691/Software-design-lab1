@@ -190,6 +190,10 @@ CMakeFiles/lab2.dir/src/CommandParser/CommandParser.cpp.obj: \
  C:/Users/HUAWEI/Desktop/program/softwareDesign/lab1/src/FileCommand/FileCommand.h \
  C:/Users/HUAWEI/Desktop/program/softwareDesign/lab1/src/ContentsCommand/ContentsCommand.h \
  C:/Users/HUAWEI/Desktop/program/softwareDesign/lab1/src/ShowCommand/ShowCommand.h \
+ C:/Users/HUAWEI/Desktop/program/softwareDesign/lab1/src/SessionCommand/SessionCommand.h \
+ C:/Users/HUAWEI/Desktop/program/softwareDesign/lab1/src/Command.h \
  C:/Users/HUAWEI/Desktop/program/softwareDesign/lab1/src/ContentsCommand/ContentsCommand.h \
  C:/Users/HUAWEI/Desktop/program/softwareDesign/lab1/src/tool/tool.h \
- C:\Users\HUAWEI\Desktop\program\softwareDesign\lab1\src\CommandParser\CommandParser.h
+ C:\Users\HUAWEI\Desktop\program\softwareDesign\lab1\src\CommandParser\CommandParser.h \
+ C:/Users/HUAWEI/Desktop/program/softwareDesign/lab1/src/File/WorkSpace.h \
+ C:/Users/HUAWEI/Desktop/program/softwareDesign/lab1/src/File/File.h

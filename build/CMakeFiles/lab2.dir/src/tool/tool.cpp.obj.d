@@ -183,4 +183,6 @@ CMakeFiles/lab2.dir/src/tool/tool.cpp.obj: \
  D:/Mingw-w64/mingw64/lib/gcc/x86_64-w64-mingw32/13.2.0/include/c++/bits/regex.tcc \
  D:/Mingw-w64/mingw64/lib/gcc/x86_64-w64-mingw32/13.2.0/include/c++/bits/regex_executor.h \
  D:/Mingw-w64/mingw64/lib/gcc/x86_64-w64-mingw32/13.2.0/include/c++/bits/regex_executor.tcc \
- C:\Users\HUAWEI\Desktop\program\softwareDesign\lab1\src\tool\tool.h
+ C:\Users\HUAWEI\Desktop\program\softwareDesign\lab1\src\tool\tool.h \
+ C:/Users/HUAWEI/Desktop/program/softwareDesign/lab1/src/File/WorkSpace.h \
+ C:/Users/HUAWEI/Desktop/program/softwareDesign/lab1/src/File/File.h

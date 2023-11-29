@@ -10,7 +10,11 @@ set(CMAKE_DEPENDS_LANGUAGES
 set(CMAKE_DEPENDS_DEPENDENCY_FILES
   "C:/Users/HUAWEI/Desktop/program/softwareDesign/lab1/src/CommandParser/CommandParser.cpp" "CMakeFiles/lab2.dir/src/CommandParser/CommandParser.cpp.obj" "gcc" "CMakeFiles/lab2.dir/src/CommandParser/CommandParser.cpp.obj.d"
   "C:/Users/HUAWEI/Desktop/program/softwareDesign/lab1/src/ContentsCommand/ContentsCommand.cpp" "CMakeFiles/lab2.dir/src/ContentsCommand/ContentsCommand.cpp.obj" "gcc" "CMakeFiles/lab2.dir/src/ContentsCommand/ContentsCommand.cpp.obj.d"
+  "C:/Users/HUAWEI/Desktop/program/softwareDesign/lab1/src/File/File.cpp" "CMakeFiles/lab2.dir/src/File/File.cpp.obj" "gcc" "CMakeFiles/lab2.dir/src/File/File.cpp.obj.d"
+  "C:/Users/HUAWEI/Desktop/program/softwareDesign/lab1/src/File/WorkSpace.cpp" "CMakeFiles/lab2.dir/src/File/WorkSpace.cpp.obj" "gcc" "CMakeFiles/lab2.dir/src/File/WorkSpace.cpp.obj.d"
   "C:/Users/HUAWEI/Desktop/program/softwareDesign/lab1/src/FileCommand/FileCommand.cpp" "CMakeFiles/lab2.dir/src/FileCommand/FileCommand.cpp.obj" "gcc" "CMakeFiles/lab2.dir/src/FileCommand/FileCommand.cpp.obj.d"
+  "C:/Users/HUAWEI/Desktop/program/softwareDesign/lab1/src/Session/Session.cpp" "CMakeFiles/lab2.dir/src/Session/Session.cpp.obj" "gcc" "CMakeFiles/lab2.dir/src/Session/Session.cpp.obj.d"
+  "C:/Users/HUAWEI/Desktop/program/softwareDesign/lab1/src/SessionCommand/SessionCommand.cpp" "CMakeFiles/lab2.dir/src/SessionCommand/SessionCommand.cpp.obj" "gcc" "CMakeFiles/lab2.dir/src/SessionCommand/SessionCommand.cpp.obj.d"
   "C:/Users/HUAWEI/Desktop/program/softwareDesign/lab1/src/ShowCommand/ShowCommand.cpp" "CMakeFiles/lab2.dir/src/ShowCommand/ShowCommand.cpp.obj" "gcc" "CMakeFiles/lab2.dir/src/ShowCommand/ShowCommand.cpp.obj.d"
   "C:/Users/HUAWEI/Desktop/program/softwareDesign/lab1/src/tool/tool.cpp" "CMakeFiles/lab2.dir/src/tool/tool.cpp.obj" "gcc" "CMakeFiles/lab2.dir/src/tool/tool.cpp.obj.d"
   "C:/Users/HUAWEI/Desktop/program/softwareDesign/lab1/test.cpp" "CMakeFiles/lab2.dir/test.cpp.obj" "gcc" "CMakeFiles/lab2.dir/test.cpp.obj.d"

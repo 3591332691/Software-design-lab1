@@ -7,11 +7,17 @@
 #include "ContentsCommand\\ContentsCommand.h"
 #include "tool\\tool.h"
 #include "CommandParser.h"
+#include "File\\WorkSpace.h"
 using namespace std;
 extern vector <string> currentFileContents;
 extern vector <string> history;
 extern string currentFileName;
 extern vector <string> contentsCommandHistory;
+extern vector<WorkSpace*> workspaces;
+extern int currentWorkSpaceId;
+/**
+ * @brief 解析以load开头的命令，调用invoker执行
+ */
 void CommandParser::CommandParseLoad(string command){
             regex pattern("^([a-zA-Z]:(([\\\\/])[^\\\\/:*?<>|]+)*([\\\\/])[^\\\\/:*?<>|]+\\.[^\\\\/:*?<>|]+,)*[a-zA-Z]:(([\\\\/])[^\\\\/:*?<>|]+)*([\\\\/])[^\\\\/:*?<>|]+\\.[^\\\\/:*?<>|]+$");
             regex pattern1("^[\\.]{1,2}((/){1}[\\w]+[\\.]{0,1}[\\w]+)+$");
@@ -24,21 +30,30 @@ void CommandParser::CommandParseLoad(string command){
             }
             if ((regex_match(filePath, pattern) || regex_match(filePath, pattern1)||regex_match(filePath, pattern2)) && filePath.find(".md") == (filePath.length() - 3))
             {
-                FileCommand *commandA = new mdFile(filePath);
-                Invoker invoker;
-                invoker.setFileCommand(commandA);
-                invoker.executeLoadCommand();
-                cout << "打开了文件" << filePath << endl;
-                currentFileName = filePath;
-                delete commandA;
-                history.push_back(getTime() + command);
-                
+                //检查workspace是否重复
+                WorkSpace* temp = new WorkSpace(filePath);
+                if(!checkWorkSpaceNameOccupied(temp->get_workspace_name())){//如果名字未被占用
+                    //1.workspace加入workspaces里
+                    workspaces.push_back(temp);
+                    //“后面一定进行了load的操作”->2.工作台内容存旧读新，working time存旧迎新
+                    FileCommand *commandA = new mdFile(filePath);
+                    Invoker invoker;
+                    invoker.setFileCommand(commandA);
+                    invoker.executeLoadCommand();
+                    delete commandA;
+                    cout << "打开了文件" << filePath << endl;
+                    //3.更新history
+                    history.push_back(getTime() + command);
+                }
+                else{//如果名字被占用，就delete
+                    delete temp;
+                    cout<<"error:同名workspace已存在！"<<endl;
+                }
             }
             else
             {
                 cout << "路径" << filePath << "有非法字符或者路径不正确" << endl;
             }
-
 }
 void CommandParser::CommandParseSave(string command){
             if (currentFileName == "")
@@ -53,8 +68,6 @@ void CommandParser::CommandParseSave(string command){
                 invoker.executeSaveCommand();
                 delete commandA;
                 history.push_back(getTime() + command);
-                
-                currentFileName = "";
             }
 }
 void CommandParser::CommandParseInsert(string command){
@@ -271,4 +284,25 @@ void CommandParser::CommandParseHistory(string command){
                         cout<<history[history.size()-1-i]<<endl;
                     }
 
+}
+void CommandParser::CommandParseList_workspace(string command){//8
+    history.push_back(getTime() + command);
+    List_workspaceCommand *commandA = new List_workspaceCommand;
+    Invoker invoker;
+    invoker.setList_workspaceCommand(commandA);
+    invoker.executeCommand();
+}
+void CommandParser::CommandParseClose(string command){//14
+    history.push_back(getTime() + command);
+    CloseCommand *commandA = new CloseCommand;
+    Invoker invoker;
+    invoker.setCloseCommand(commandA);
+    invoker.executeCommand();
+}
+void CommandParser::CommandParseExit(string command){//15
+    history.push_back(getTime() + command);
+    ExitCommand *commandA = new ExitCommand;
+    Invoker invoker;
+    invoker.setExitCommand(commandA);
+    invoker.executeCommand();
 }

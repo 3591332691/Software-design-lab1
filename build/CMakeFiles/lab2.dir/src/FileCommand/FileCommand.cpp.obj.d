@@ -141,4 +141,6 @@ CMakeFiles/lab2.dir/src/FileCommand/FileCommand.cpp.obj: \
  D:/Mingw-w64/mingw64/lib/gcc/x86_64-w64-mingw32/13.2.0/include/c++/bits/stl_uninitialized.h \
  D:/Mingw-w64/mingw64/lib/gcc/x86_64-w64-mingw32/13.2.0/include/c++/bits/stl_vector.h \
  D:/Mingw-w64/mingw64/lib/gcc/x86_64-w64-mingw32/13.2.0/include/c++/bits/stl_bvector.h \
- D:/Mingw-w64/mingw64/lib/gcc/x86_64-w64-mingw32/13.2.0/include/c++/bits/vector.tcc
+ D:/Mingw-w64/mingw64/lib/gcc/x86_64-w64-mingw32/13.2.0/include/c++/bits/vector.tcc \
+ C:/Users/HUAWEI/Desktop/program/softwareDesign/lab1/src/File/WorkSpace.h \
+ C:/Users/HUAWEI/Desktop/program/softwareDesign/lab1/src/File/File.h

@@ -196,6 +196,54 @@ src/ContentsCommand/ContentsCommand.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\lab2.dir\build.make CMakeFiles/lab2.dir/src/ContentsCommand/ContentsCommand.cpp.s
 .PHONY : src/ContentsCommand/ContentsCommand.cpp.s
 
+src/File/File.obj: src/File/File.cpp.obj
+.PHONY : src/File/File.obj
+
+# target to build an object file
+src/File/File.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\lab2.dir\build.make CMakeFiles/lab2.dir/src/File/File.cpp.obj
+.PHONY : src/File/File.cpp.obj
+
+src/File/File.i: src/File/File.cpp.i
+.PHONY : src/File/File.i
+
+# target to preprocess a source file
+src/File/File.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\lab2.dir\build.make CMakeFiles/lab2.dir/src/File/File.cpp.i
+.PHONY : src/File/File.cpp.i
+
+src/File/File.s: src/File/File.cpp.s
+.PHONY : src/File/File.s
+
+# target to generate assembly for a file
+src/File/File.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\lab2.dir\build.make CMakeFiles/lab2.dir/src/File/File.cpp.s
+.PHONY : src/File/File.cpp.s
+
+src/File/WorkSpace.obj: src/File/WorkSpace.cpp.obj
+.PHONY : src/File/WorkSpace.obj
+
+# target to build an object file
+src/File/WorkSpace.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\lab2.dir\build.make CMakeFiles/lab2.dir/src/File/WorkSpace.cpp.obj
+.PHONY : src/File/WorkSpace.cpp.obj
+
+src/File/WorkSpace.i: src/File/WorkSpace.cpp.i
+.PHONY : src/File/WorkSpace.i
+
+# target to preprocess a source file
+src/File/WorkSpace.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\lab2.dir\build.make CMakeFiles/lab2.dir/src/File/WorkSpace.cpp.i
+.PHONY : src/File/WorkSpace.cpp.i
+
+src/File/WorkSpace.s: src/File/WorkSpace.cpp.s
+.PHONY : src/File/WorkSpace.s
+
+# target to generate assembly for a file
+src/File/WorkSpace.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\lab2.dir\build.make CMakeFiles/lab2.dir/src/File/WorkSpace.cpp.s
+.PHONY : src/File/WorkSpace.cpp.s
+
 src/FileCommand/FileCommand.obj: src/FileCommand/FileCommand.cpp.obj
 .PHONY : src/FileCommand/FileCommand.obj
 
@@ -219,6 +267,54 @@ src/FileCommand/FileCommand.s: src/FileCommand/FileCommand.cpp.s
 src/FileCommand/FileCommand.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\lab2.dir\build.make CMakeFiles/lab2.dir/src/FileCommand/FileCommand.cpp.s
 .PHONY : src/FileCommand/FileCommand.cpp.s
+
+src/Session/Session.obj: src/Session/Session.cpp.obj
+.PHONY : src/Session/Session.obj
+
+# target to build an object file
+src/Session/Session.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\lab2.dir\build.make CMakeFiles/lab2.dir/src/Session/Session.cpp.obj
+.PHONY : src/Session/Session.cpp.obj
+
+src/Session/Session.i: src/Session/Session.cpp.i
+.PHONY : src/Session/Session.i
+
+# target to preprocess a source file
+src/Session/Session.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\lab2.dir\build.make CMakeFiles/lab2.dir/src/Session/Session.cpp.i
+.PHONY : src/Session/Session.cpp.i
+
+src/Session/Session.s: src/Session/Session.cpp.s
+.PHONY : src/Session/Session.s
+
+# target to generate assembly for a file
+src/Session/Session.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\lab2.dir\build.make CMakeFiles/lab2.dir/src/Session/Session.cpp.s
+.PHONY : src/Session/Session.cpp.s
+
+src/SessionCommand/SessionCommand.obj: src/SessionCommand/SessionCommand.cpp.obj
+.PHONY : src/SessionCommand/SessionCommand.obj
+
+# target to build an object file
+src/SessionCommand/SessionCommand.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\lab2.dir\build.make CMakeFiles/lab2.dir/src/SessionCommand/SessionCommand.cpp.obj
+.PHONY : src/SessionCommand/SessionCommand.cpp.obj
+
+src/SessionCommand/SessionCommand.i: src/SessionCommand/SessionCommand.cpp.i
+.PHONY : src/SessionCommand/SessionCommand.i
+
+# target to preprocess a source file
+src/SessionCommand/SessionCommand.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\lab2.dir\build.make CMakeFiles/lab2.dir/src/SessionCommand/SessionCommand.cpp.i
+.PHONY : src/SessionCommand/SessionCommand.cpp.i
+
+src/SessionCommand/SessionCommand.s: src/SessionCommand/SessionCommand.cpp.s
+.PHONY : src/SessionCommand/SessionCommand.s
+
+# target to generate assembly for a file
+src/SessionCommand/SessionCommand.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\lab2.dir\build.make CMakeFiles/lab2.dir/src/SessionCommand/SessionCommand.cpp.s
+.PHONY : src/SessionCommand/SessionCommand.cpp.s
 
 src/ShowCommand/ShowCommand.obj: src/ShowCommand/ShowCommand.cpp.obj
 .PHONY : src/ShowCommand/ShowCommand.obj
@@ -309,9 +405,21 @@ help:
 	@echo ... src/ContentsCommand/ContentsCommand.obj
 	@echo ... src/ContentsCommand/ContentsCommand.i
 	@echo ... src/ContentsCommand/ContentsCommand.s
+	@echo ... src/File/File.obj
+	@echo ... src/File/File.i
+	@echo ... src/File/File.s
+	@echo ... src/File/WorkSpace.obj
+	@echo ... src/File/WorkSpace.i
+	@echo ... src/File/WorkSpace.s
 	@echo ... src/FileCommand/FileCommand.obj
 	@echo ... src/FileCommand/FileCommand.i
 	@echo ... src/FileCommand/FileCommand.s
+	@echo ... src/Session/Session.obj
+	@echo ... src/Session/Session.i
+	@echo ... src/Session/Session.s
+	@echo ... src/SessionCommand/SessionCommand.obj
+	@echo ... src/SessionCommand/SessionCommand.i
+	@echo ... src/SessionCommand/SessionCommand.s
 	@echo ... src/ShowCommand/ShowCommand.obj
 	@echo ... src/ShowCommand/ShowCommand.i
 	@echo ... src/ShowCommand/ShowCommand.s

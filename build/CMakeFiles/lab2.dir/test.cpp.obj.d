@@ -183,6 +183,10 @@ CMakeFiles/lab2.dir/test.cpp.obj: \
  D:/Mingw-w64/mingw64/lib/gcc/x86_64-w64-mingw32/13.2.0/include/c++/bits/regex.tcc \
  D:/Mingw-w64/mingw64/lib/gcc/x86_64-w64-mingw32/13.2.0/include/c++/bits/regex_executor.h \
  D:/Mingw-w64/mingw64/lib/gcc/x86_64-w64-mingw32/13.2.0/include/c++/bits/regex_executor.tcc \
+ D:/Mingw-w64/mingw64/lib/gcc/x86_64-w64-mingw32/13.2.0/include/c++/fstream \
+ D:/Mingw-w64/mingw64/lib/gcc/x86_64-w64-mingw32/13.2.0/include/c++/x86_64-w64-mingw32/bits/basic_file.h \
+ D:/Mingw-w64/mingw64/lib/gcc/x86_64-w64-mingw32/13.2.0/include/c++/x86_64-w64-mingw32/bits/c++io.h \
+ D:/Mingw-w64/mingw64/lib/gcc/x86_64-w64-mingw32/13.2.0/include/c++/bits/fstream.tcc \
  C:/Users/HUAWEI/Desktop/program/softwareDesign/lab1/src/FileCommand/FileCommand.h \
  C:/Users/HUAWEI/Desktop/program/softwareDesign/lab1/src/invoker.h \
  D:/Mingw-w64/mingw64/x86_64-w64-mingw32/include/string.h \
@@ -190,6 +194,11 @@ CMakeFiles/lab2.dir/test.cpp.obj: \
  C:/Users/HUAWEI/Desktop/program/softwareDesign/lab1/src/FileCommand/FileCommand.h \
  C:/Users/HUAWEI/Desktop/program/softwareDesign/lab1/src/ContentsCommand/ContentsCommand.h \
  C:/Users/HUAWEI/Desktop/program/softwareDesign/lab1/src/ShowCommand/ShowCommand.h \
+ C:/Users/HUAWEI/Desktop/program/softwareDesign/lab1/src/SessionCommand/SessionCommand.h \
+ C:/Users/HUAWEI/Desktop/program/softwareDesign/lab1/src/Command.h \
  C:/Users/HUAWEI/Desktop/program/softwareDesign/lab1/src/ContentsCommand/ContentsCommand.h \
  C:/Users/HUAWEI/Desktop/program/softwareDesign/lab1/src/tool/tool.h \
- C:/Users/HUAWEI/Desktop/program/softwareDesign/lab1/src/CommandParser/CommandParser.h
+ C:/Users/HUAWEI/Desktop/program/softwareDesign/lab1/src/CommandParser/CommandParser.h \
+ C:/Users/HUAWEI/Desktop/program/softwareDesign/lab1/src/File/WorkSpace.h \
+ C:/Users/HUAWEI/Desktop/program/softwareDesign/lab1/src/File/File.h \
+ C:/Users/HUAWEI/Desktop/program/softwareDesign/lab1/src/constants.h

@@ -113,11 +113,41 @@ CMakeFiles/lab2.dir/src/ContentsCommand/ContentsCommand.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/lab2.dir/src/ContentsCommand/ContentsCommand.cpp.s"
 	D:\Mingw-w64\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\HUAWEI\Desktop\program\softwareDesign\lab1\src\ContentsCommand\ContentsCommand.cpp -o CMakeFiles\lab2.dir\src\ContentsCommand\ContentsCommand.cpp.s
 
+CMakeFiles/lab2.dir/src/File/File.cpp.obj: CMakeFiles/lab2.dir/flags.make
+CMakeFiles/lab2.dir/src/File/File.cpp.obj: CMakeFiles/lab2.dir/includes_CXX.rsp
+CMakeFiles/lab2.dir/src/File/File.cpp.obj: C:/Users/HUAWEI/Desktop/program/softwareDesign/lab1/src/File/File.cpp
+CMakeFiles/lab2.dir/src/File/File.cpp.obj: CMakeFiles/lab2.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\HUAWEI\Desktop\program\softwareDesign\lab1\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/lab2.dir/src/File/File.cpp.obj"
+	D:\Mingw-w64\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/lab2.dir/src/File/File.cpp.obj -MF CMakeFiles\lab2.dir\src\File\File.cpp.obj.d -o CMakeFiles\lab2.dir\src\File\File.cpp.obj -c C:\Users\HUAWEI\Desktop\program\softwareDesign\lab1\src\File\File.cpp
+
+CMakeFiles/lab2.dir/src/File/File.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/lab2.dir/src/File/File.cpp.i"
+	D:\Mingw-w64\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\HUAWEI\Desktop\program\softwareDesign\lab1\src\File\File.cpp > CMakeFiles\lab2.dir\src\File\File.cpp.i
+
+CMakeFiles/lab2.dir/src/File/File.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/lab2.dir/src/File/File.cpp.s"
+	D:\Mingw-w64\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\HUAWEI\Desktop\program\softwareDesign\lab1\src\File\File.cpp -o CMakeFiles\lab2.dir\src\File\File.cpp.s
+
+CMakeFiles/lab2.dir/src/File/WorkSpace.cpp.obj: CMakeFiles/lab2.dir/flags.make
+CMakeFiles/lab2.dir/src/File/WorkSpace.cpp.obj: CMakeFiles/lab2.dir/includes_CXX.rsp
+CMakeFiles/lab2.dir/src/File/WorkSpace.cpp.obj: C:/Users/HUAWEI/Desktop/program/softwareDesign/lab1/src/File/WorkSpace.cpp
+CMakeFiles/lab2.dir/src/File/WorkSpace.cpp.obj: CMakeFiles/lab2.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\HUAWEI\Desktop\program\softwareDesign\lab1\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/lab2.dir/src/File/WorkSpace.cpp.obj"
+	D:\Mingw-w64\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/lab2.dir/src/File/WorkSpace.cpp.obj -MF CMakeFiles\lab2.dir\src\File\WorkSpace.cpp.obj.d -o CMakeFiles\lab2.dir\src\File\WorkSpace.cpp.obj -c C:\Users\HUAWEI\Desktop\program\softwareDesign\lab1\src\File\WorkSpace.cpp
+
+CMakeFiles/lab2.dir/src/File/WorkSpace.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/lab2.dir/src/File/WorkSpace.cpp.i"
+	D:\Mingw-w64\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\HUAWEI\Desktop\program\softwareDesign\lab1\src\File\WorkSpace.cpp > CMakeFiles\lab2.dir\src\File\WorkSpace.cpp.i
+
+CMakeFiles/lab2.dir/src/File/WorkSpace.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/lab2.dir/src/File/WorkSpace.cpp.s"
+	D:\Mingw-w64\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\HUAWEI\Desktop\program\softwareDesign\lab1\src\File\WorkSpace.cpp -o CMakeFiles\lab2.dir\src\File\WorkSpace.cpp.s
+
 CMakeFiles/lab2.dir/src/FileCommand/FileCommand.cpp.obj: CMakeFiles/lab2.dir/flags.make
 CMakeFiles/lab2.dir/src/FileCommand/FileCommand.cpp.obj: CMakeFiles/lab2.dir/includes_CXX.rsp
 CMakeFiles/lab2.dir/src/FileCommand/FileCommand.cpp.obj: C:/Users/HUAWEI/Desktop/program/softwareDesign/lab1/src/FileCommand/FileCommand.cpp
 CMakeFiles/lab2.dir/src/FileCommand/FileCommand.cpp.obj: CMakeFiles/lab2.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\HUAWEI\Desktop\program\softwareDesign\lab1\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/lab2.dir/src/FileCommand/FileCommand.cpp.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\HUAWEI\Desktop\program\softwareDesign\lab1\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/lab2.dir/src/FileCommand/FileCommand.cpp.obj"
 	D:\Mingw-w64\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/lab2.dir/src/FileCommand/FileCommand.cpp.obj -MF CMakeFiles\lab2.dir\src\FileCommand\FileCommand.cpp.obj.d -o CMakeFiles\lab2.dir\src\FileCommand\FileCommand.cpp.obj -c C:\Users\HUAWEI\Desktop\program\softwareDesign\lab1\src\FileCommand\FileCommand.cpp
 
 CMakeFiles/lab2.dir/src/FileCommand/FileCommand.cpp.i: cmake_force
@@ -128,11 +158,41 @@ CMakeFiles/lab2.dir/src/FileCommand/FileCommand.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/lab2.dir/src/FileCommand/FileCommand.cpp.s"
 	D:\Mingw-w64\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\HUAWEI\Desktop\program\softwareDesign\lab1\src\FileCommand\FileCommand.cpp -o CMakeFiles\lab2.dir\src\FileCommand\FileCommand.cpp.s
 
+CMakeFiles/lab2.dir/src/Session/Session.cpp.obj: CMakeFiles/lab2.dir/flags.make
+CMakeFiles/lab2.dir/src/Session/Session.cpp.obj: CMakeFiles/lab2.dir/includes_CXX.rsp
+CMakeFiles/lab2.dir/src/Session/Session.cpp.obj: C:/Users/HUAWEI/Desktop/program/softwareDesign/lab1/src/Session/Session.cpp
+CMakeFiles/lab2.dir/src/Session/Session.cpp.obj: CMakeFiles/lab2.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\HUAWEI\Desktop\program\softwareDesign\lab1\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object CMakeFiles/lab2.dir/src/Session/Session.cpp.obj"
+	D:\Mingw-w64\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/lab2.dir/src/Session/Session.cpp.obj -MF CMakeFiles\lab2.dir\src\Session\Session.cpp.obj.d -o CMakeFiles\lab2.dir\src\Session\Session.cpp.obj -c C:\Users\HUAWEI\Desktop\program\softwareDesign\lab1\src\Session\Session.cpp
+
+CMakeFiles/lab2.dir/src/Session/Session.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/lab2.dir/src/Session/Session.cpp.i"
+	D:\Mingw-w64\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\HUAWEI\Desktop\program\softwareDesign\lab1\src\Session\Session.cpp > CMakeFiles\lab2.dir\src\Session\Session.cpp.i
+
+CMakeFiles/lab2.dir/src/Session/Session.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/lab2.dir/src/Session/Session.cpp.s"
+	D:\Mingw-w64\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\HUAWEI\Desktop\program\softwareDesign\lab1\src\Session\Session.cpp -o CMakeFiles\lab2.dir\src\Session\Session.cpp.s
+
+CMakeFiles/lab2.dir/src/SessionCommand/SessionCommand.cpp.obj: CMakeFiles/lab2.dir/flags.make
+CMakeFiles/lab2.dir/src/SessionCommand/SessionCommand.cpp.obj: CMakeFiles/lab2.dir/includes_CXX.rsp
+CMakeFiles/lab2.dir/src/SessionCommand/SessionCommand.cpp.obj: C:/Users/HUAWEI/Desktop/program/softwareDesign/lab1/src/SessionCommand/SessionCommand.cpp
+CMakeFiles/lab2.dir/src/SessionCommand/SessionCommand.cpp.obj: CMakeFiles/lab2.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\HUAWEI\Desktop\program\softwareDesign\lab1\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building CXX object CMakeFiles/lab2.dir/src/SessionCommand/SessionCommand.cpp.obj"
+	D:\Mingw-w64\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/lab2.dir/src/SessionCommand/SessionCommand.cpp.obj -MF CMakeFiles\lab2.dir\src\SessionCommand\SessionCommand.cpp.obj.d -o CMakeFiles\lab2.dir\src\SessionCommand\SessionCommand.cpp.obj -c C:\Users\HUAWEI\Desktop\program\softwareDesign\lab1\src\SessionCommand\SessionCommand.cpp
+
+CMakeFiles/lab2.dir/src/SessionCommand/SessionCommand.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/lab2.dir/src/SessionCommand/SessionCommand.cpp.i"
+	D:\Mingw-w64\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\HUAWEI\Desktop\program\softwareDesign\lab1\src\SessionCommand\SessionCommand.cpp > CMakeFiles\lab2.dir\src\SessionCommand\SessionCommand.cpp.i
+
+CMakeFiles/lab2.dir/src/SessionCommand/SessionCommand.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/lab2.dir/src/SessionCommand/SessionCommand.cpp.s"
+	D:\Mingw-w64\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\HUAWEI\Desktop\program\softwareDesign\lab1\src\SessionCommand\SessionCommand.cpp -o CMakeFiles\lab2.dir\src\SessionCommand\SessionCommand.cpp.s
+
 CMakeFiles/lab2.dir/src/ShowCommand/ShowCommand.cpp.obj: CMakeFiles/lab2.dir/flags.make
 CMakeFiles/lab2.dir/src/ShowCommand/ShowCommand.cpp.obj: CMakeFiles/lab2.dir/includes_CXX.rsp
 CMakeFiles/lab2.dir/src/ShowCommand/ShowCommand.cpp.obj: C:/Users/HUAWEI/Desktop/program/softwareDesign/lab1/src/ShowCommand/ShowCommand.cpp
 CMakeFiles/lab2.dir/src/ShowCommand/ShowCommand.cpp.obj: CMakeFiles/lab2.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\HUAWEI\Desktop\program\softwareDesign\lab1\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/lab2.dir/src/ShowCommand/ShowCommand.cpp.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\HUAWEI\Desktop\program\softwareDesign\lab1\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Building CXX object CMakeFiles/lab2.dir/src/ShowCommand/ShowCommand.cpp.obj"
 	D:\Mingw-w64\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/lab2.dir/src/ShowCommand/ShowCommand.cpp.obj -MF CMakeFiles\lab2.dir\src\ShowCommand\ShowCommand.cpp.obj.d -o CMakeFiles\lab2.dir\src\ShowCommand\ShowCommand.cpp.obj -c C:\Users\HUAWEI\Desktop\program\softwareDesign\lab1\src\ShowCommand\ShowCommand.cpp
 
 CMakeFiles/lab2.dir/src/ShowCommand/ShowCommand.cpp.i: cmake_force
@@ -147,7 +207,7 @@ CMakeFiles/lab2.dir/src/tool/tool.cpp.obj: CMakeFiles/lab2.dir/flags.make
 CMakeFiles/lab2.dir/src/tool/tool.cpp.obj: CMakeFiles/lab2.dir/includes_CXX.rsp
 CMakeFiles/lab2.dir/src/tool/tool.cpp.obj: C:/Users/HUAWEI/Desktop/program/softwareDesign/lab1/src/tool/tool.cpp
 CMakeFiles/lab2.dir/src/tool/tool.cpp.obj: CMakeFiles/lab2.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\HUAWEI\Desktop\program\softwareDesign\lab1\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/lab2.dir/src/tool/tool.cpp.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\HUAWEI\Desktop\program\softwareDesign\lab1\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Building CXX object CMakeFiles/lab2.dir/src/tool/tool.cpp.obj"
 	D:\Mingw-w64\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/lab2.dir/src/tool/tool.cpp.obj -MF CMakeFiles\lab2.dir\src\tool\tool.cpp.obj.d -o CMakeFiles\lab2.dir\src\tool\tool.cpp.obj -c C:\Users\HUAWEI\Desktop\program\softwareDesign\lab1\src\tool\tool.cpp
 
 CMakeFiles/lab2.dir/src/tool/tool.cpp.i: cmake_force
@@ -163,7 +223,11 @@ lab2_OBJECTS = \
 "CMakeFiles/lab2.dir/test.cpp.obj" \
 "CMakeFiles/lab2.dir/src/CommandParser/CommandParser.cpp.obj" \
 "CMakeFiles/lab2.dir/src/ContentsCommand/ContentsCommand.cpp.obj" \
+"CMakeFiles/lab2.dir/src/File/File.cpp.obj" \
+"CMakeFiles/lab2.dir/src/File/WorkSpace.cpp.obj" \
 "CMakeFiles/lab2.dir/src/FileCommand/FileCommand.cpp.obj" \
+"CMakeFiles/lab2.dir/src/Session/Session.cpp.obj" \
+"CMakeFiles/lab2.dir/src/SessionCommand/SessionCommand.cpp.obj" \
 "CMakeFiles/lab2.dir/src/ShowCommand/ShowCommand.cpp.obj" \
 "CMakeFiles/lab2.dir/src/tool/tool.cpp.obj"
 
@@ -173,14 +237,18 @@ lab2_EXTERNAL_OBJECTS =
 lab2.exe: CMakeFiles/lab2.dir/test.cpp.obj
 lab2.exe: CMakeFiles/lab2.dir/src/CommandParser/CommandParser.cpp.obj
 lab2.exe: CMakeFiles/lab2.dir/src/ContentsCommand/ContentsCommand.cpp.obj
+lab2.exe: CMakeFiles/lab2.dir/src/File/File.cpp.obj
+lab2.exe: CMakeFiles/lab2.dir/src/File/WorkSpace.cpp.obj
 lab2.exe: CMakeFiles/lab2.dir/src/FileCommand/FileCommand.cpp.obj
+lab2.exe: CMakeFiles/lab2.dir/src/Session/Session.cpp.obj
+lab2.exe: CMakeFiles/lab2.dir/src/SessionCommand/SessionCommand.cpp.obj
 lab2.exe: CMakeFiles/lab2.dir/src/ShowCommand/ShowCommand.cpp.obj
 lab2.exe: CMakeFiles/lab2.dir/src/tool/tool.cpp.obj
 lab2.exe: CMakeFiles/lab2.dir/build.make
 lab2.exe: CMakeFiles/lab2.dir/linklibs.rsp
 lab2.exe: CMakeFiles/lab2.dir/objects1.rsp
 lab2.exe: CMakeFiles/lab2.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=C:\Users\HUAWEI\Desktop\program\softwareDesign\lab1\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Linking CXX executable lab2.exe"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=C:\Users\HUAWEI\Desktop\program\softwareDesign\lab1\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_11) "Linking CXX executable lab2.exe"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles\lab2.dir\link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.

@@ -4,6 +4,7 @@
 #include "FileCommand\\FileCommand.h"
 #include "ContentsCommand\\ContentsCommand.h"
 #include "ShowCommand\\ShowCommand.h"
+#include "SessionCommand\\SessionCommand.h"
 #include<iostream>
 class Invoker {
 private:
@@ -11,6 +12,7 @@ private:
     insertCommand* InsertCommand;
     deleteCommand* DeleteCommand;
     Display* display;
+    Command* origin_command;
 public:
     void setFileCommand(FileCommand* cmd) {
         fileCommand = cmd;
@@ -50,5 +52,19 @@ public:
     void executeListDirTreeCommand(std::string str){
         display->display_dir_tree( str);
     }
+    //new try:
+    void setExitCommand(ExitCommand* cmd){
+        origin_command = cmd;
+    }
+    void setList_workspaceCommand(List_workspaceCommand* cmd){
+        origin_command = cmd;
+    }
+    void setCloseCommand(CloseCommand* cmd){
+        origin_command = cmd;
+    }
+    void executeCommand(){
+        origin_command->execute();
+    }
+
 };
 #endif

@@ -7,7 +7,7 @@ project (lab2)
 set(CMAKE_C_COMPILER "D:/Mingw-w64/mingw64/bin/gcc.exe")
 set(CMAKE_CXX_COMPILER "D:/Mingw-w64/mingw64/bin/g++.exe")
 
-# 查找当前目录下的所有源文件和头文件，并将名称保存到 DIR_SRCS 变量
+# 查找当前目录下的所有源文件和头文件，并将名称保存到 DIR_SRCS 变量  
 file(GLOB_RECURSE DIR_SRCS src/*.cpp src/*.h)
 #把test.cpp也加入DIR_SRCS 变量里
 set(DIR_SRCS
