@@ -19,10 +19,19 @@ class WorkSpace : public File {
     void set_workspace_name(string a);
     //用来保存工作区的内容
     vector<string> workspace_content;
-    string getWorkspaceContent();
+    vector<string> getWorkspaceContent();
     void setWorkingSpaceContent(vector<string> a);
     //用于删除自身
     void kill();
 };
 
+class SessionMemento {
+private:
+    string generateFileName();
+    int workspaceCounter;
+public:
+    SessionMemento() : workspaceCounter(0) {}
+    void storeWorkspace(vector<WorkSpace*> workspaces);
+    vector<WorkSpace*> getWorkspaces();
+};
 #endif

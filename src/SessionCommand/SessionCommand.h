@@ -1,6 +1,6 @@
 #ifndef SESSIONCOMMAND_H
 #define SESSIONCOMMAND_H
-#include "Command.h"
+#include "../Command.h"
 #include <iostream>
 using namespace std;
 
@@ -8,7 +8,10 @@ class List_workspaceCommand : public Command{
 public:
     void execute() override;
 };
-
+class SaveCommand : public Command{
+public:
+    void execute() override;
+};
 class CloseCommand : public Command{
 public:
     void execute() override;
@@ -20,6 +23,11 @@ public:
 };
 
 class ExitCommand : public Command{
+public:
+    void execute() override;
+};
+
+class LsCommand : public Command{//16
 public:
     void execute() override;
 };

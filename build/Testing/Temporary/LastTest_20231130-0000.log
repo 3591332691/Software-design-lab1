@@ -1,0 +1,28 @@
+Start testing: Nov 30 10:33 中国标准时间
+----------------------------------------------------------
+1/1 Testing: MyTest
+1/1 Test: MyTest
+Command: "C:/Users/HUAWEI/Desktop/program/softwareDesign/lab1/build/lab2tests.exe"
+Directory: C:/Users/HUAWEI/Desktop/program/softwareDesign/lab1/build
+"MyTest" start time: Nov 30 10:33 中国标准时间
+Output:
+----------------------------------------------------------
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from MyTests
+[ RUN      ] MyTests.Test1
+[       OK ] MyTests.Test1 (0 ms)
+[----------] 1 test from MyTests (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (0 ms total)
+[  PASSED  ] 1 test.
+<end of output>
+Test time =   0.02 sec
+----------------------------------------------------------
+Test Passed.
+"MyTest" end time: Nov 30 10:33 中国标准时间
+"MyTest" time elapsed: 00:00:00
+----------------------------------------------------------
+
+End testing: Nov 30 10:33 中国标准时间

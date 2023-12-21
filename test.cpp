@@ -11,6 +11,7 @@
 #include "src\\CommandParser\\CommandParser.h"
 #include "src\\File\\WorkSpace.h"
 #include "src\\constants.h"
+#include "test.h"
 using namespace std;
 vector<string> commands; // for test
 string currentFileName = "";
@@ -77,7 +78,7 @@ int testCommand(vector<string> commands)
         case 8://list-workspace
         {
             CommandParser a;
-            a.CommandParseList_workspace(command);
+            a.CommandParseList_workspace(command);//showCurrentFileContents();
             break;
         }
         case 9://dir-tree
@@ -104,6 +105,12 @@ int testCommand(vector<string> commands)
             a.CommandParseList(command);
             break;
         }
+        case 13://open
+        {   
+            CommandParser a;
+            a.CommandParseOpen(command);
+            break;
+        }
         case 14://close
         {   
             CommandParser a;
@@ -116,12 +123,19 @@ int testCommand(vector<string> commands)
             a.CommandParseExit(command);
             break;
         }
+        case 16://ls
+        {
+            CommandParser a;
+            a.CommandParseLs(command);
+            break;
+        }
         default:
         {
             cout << "未识别出正确命令" << endl;
             break;
         }
         }
+        //showCurrentFileContents();//TODO:写、检查完之后要删掉。
     }
     return 0;
 }
@@ -255,9 +269,12 @@ int freeTest()
     string input;
     while (getline(cin, input) && input != "eof")
     {
+        //TODO:输入的是中文的时候无法显示
+        //cout<<" "<<input<<endl;
         commands.clear();
         commands.push_back(input);
         testCommand(commands);
+        if(input =="exit")break;
     }
     return 0;
 }
@@ -268,6 +285,33 @@ int initial()
     currentFileContents.clear();
     history.clear();
     contentsCommandHistory.clear();
+
+    SessionMemento a;
+    workspaces.clear();
+    a.getWorkspaces();//读取原来的backup 里的workspaces
+    //
+    string sessionStart = "session start at ";
+    sessionStart += getTime();
+    ofstream file1(historylogPath, ios::app);
+    if (!file1.is_open()) {
+        // 文件打开失败，处理错误
+        cout<<"Error:打开historyLog失败"<<endl;
+    }
+    else{
+        file1 << sessionStart << endl;
+        // 关闭文件
+        file1.close();
+    }
+    ofstream file2(worktimeLogPath, ios::app);
+    if (!file2.is_open()) {
+        // 文件打开失败，处理错误
+        cout<<"Error:打开historyLog失败"<<endl;
+    }
+    else{
+        file2 << sessionStart << endl;
+        // 关闭文件
+        file2.close();
+    }
     return 0;
 }
 
@@ -439,43 +483,24 @@ int test5(){
     testCommand(commands);
     return 0;
 }
-int main()
-{
+//int main(int argc, char** argv)
+//{
     // testCommandLoad();
     // testCommandSave();
     // testCommandInsert();
     // testCommandAppend();
     // testCommandDelete();
-    initial();
+    //initial();
     //testCommandList();
     //testCommandUndo();
     
 
     //start session的时候写入两个log开头
-    string sessionStart = "session start at ";
-    sessionStart += getTime();
-    ofstream file1(historylogPath, ios::app);
-    if (!file1.is_open()) {
-        // 文件打开失败，处理错误
-        cout<<"Error:打开historyLog失败"<<endl;
-    }
-    else{
-        file1 << sessionStart << endl;
-        // 关闭文件
-        file1.close();
-    }
-    ofstream file2(worktimeLogPath, ios::app);
-    if (!file2.is_open()) {
-        // 文件打开失败，处理错误
-        cout<<"Error:打开historyLog失败"<<endl;
-    }
-    else{
-        file2 << sessionStart << endl;
-        // 关闭文件
-        file2.close();
-    }
-
-
+    /*
+    
+    
     freeTest();
-    return 0;
-}
+    */
+   //return 0;
+//}
+

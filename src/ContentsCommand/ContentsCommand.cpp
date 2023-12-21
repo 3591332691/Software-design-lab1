@@ -7,24 +7,30 @@ using namespace std;
 extern vector <string> currentFileContents;
 extern vector <string> history;
 extern vector <string> contentsCommandHistory;
-void insertCommand::insert(int lineNumber, string str){
+extern string currentFileName;
+void insertCommand::insert(int lineNumber, string str){//行数从1开始计算
     int a = lineNumber;
     contentsCommandHistory.push_back("insert "+to_string(lineNumber)+" "+str);
-    if(lineNumber ==1&&currentFileContents.size()==1&&currentFileContents[0] =="")
+    //把insert history写入workspace的wsCommands
+    WorkSpace *w = findWorkspaceByFileName(currentFileName);
+    w->wsCommands.push_back("insert "+to_string(lineNumber)+" "+str);
+    if((a==1||a==0)&&currentFileContents.size()==0)//这个文件刚被创建  append ahead + insert不加行数
     {
-        currentFileContents[0] = str;
+        currentFileContents.push_back(str);
     }
-    else if (a>currentFileContents.size())
+    else if(a==1&&currentFileContents.size()>=1)//文件已有一定内容： append ahead
+    {
+        currentFileContents.insert(currentFileContents.begin(), str);
+    }
+    else if (a>currentFileContents.size())//append tail + 指定函数超出范围的情况
     {
         currentFileContents.resize(a);
         currentFileContents[a-1] = str;
     }
-    else
+    else//指定第几行
     {
         currentFileContents.insert(currentFileContents.begin() + lineNumber-1, str);
     }
-
-    
 }
 void deleteCommand::delete_(int n)
 {
@@ -33,6 +39,9 @@ void deleteCommand::delete_(int n)
         string tempCommand = "delete "+to_string(n)+" "+currentFileContents[n-1];
         contentsCommandHistory.push_back(tempCommand);//写入contents Command History
         //history.push_back(getTime()+tempCommand);//写入history
+        //把delete history写入workspace的wsCommands
+        WorkSpace *w = findWorkspaceByFileName(currentFileName);
+        w->wsCommands.push_back(tempCommand);
         for(int i = n-1;i+1<currentFileContents.size();i++)
     {
         currentFileContents[i] = currentFileContents[i+1];
@@ -49,8 +58,9 @@ void deleteCommand::delete_(string s)
         if(static_cast<int>(currentFileContents[i].find(s))>=0){
             string tempCommand = "delete "+to_string(i+1)+" "+currentFileContents[i];
             contentsCommandHistory.push_back(tempCommand);
-            //history.push_back(getTime()+tempCommand);//写入history
-            //cout<<au<<endl;
+            //把delete history写入workspace的wsCommands
+            WorkSpace *w = findWorkspaceByFileName(currentFileName);
+            w->wsCommands.push_back(tempCommand);
             delete_(i+1);
             temp = 1;
         }

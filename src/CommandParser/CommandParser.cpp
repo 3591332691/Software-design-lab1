@@ -41,7 +41,6 @@ void CommandParser::CommandParseLoad(string command){
                     invoker.setFileCommand(commandA);
                     invoker.executeLoadCommand();
                     delete commandA;
-                    cout << "打开了文件" << filePath << endl;
                     //3.更新history
                     history.push_back(getTime() + command);
                 }
@@ -68,6 +67,9 @@ void CommandParser::CommandParseSave(string command){
                 invoker.executeSaveCommand();
                 delete commandA;
                 history.push_back(getTime() + command);
+                //把save history写入workspace的wsCommands
+                WorkSpace *w = findWorkspaceByFileName(currentFileName);
+                w->wsCommands.push_back("save");
             }
 }
 void CommandParser::CommandParseInsert(string command){
@@ -100,7 +102,7 @@ void CommandParser::CommandParseInsert(string command){
                 command = "insert " + to_string(number_line) + " " + text;
                 //cout << "##Command被重写入history为" << command << endl;
                 history.push_back(getTime() + command);
-                contentsCommandHistory.push_back(command);
+                //contentsCommandHistory.push_back(command);
             }
             else if (tempFlag == -1) // insert到末尾
             {
@@ -172,9 +174,14 @@ void CommandParser::CommandParseUndo(string command){
                 deleteCommand *commandA = new deleteCommand();
                 Invoker invoker;
                 invoker.setDeleteCommand(commandA);
-                invoker.executeDeleteCommand(stoi(a));//delete自动写了history
+                invoker.executeDeleteCommand(stoi(a));//提示：delete自动写了history
+                //对history进行操作
                 contentsCommandHistory.pop_back();//把delete自动写入history的记录删掉
                 contentsCommandHistory.push_back("undo");//undo成功的话插入一个undo
+                //把undo history写入workspace的wsCommands
+                WorkSpace *w = findWorkspaceByFileName(currentFileName);
+                w->wsCommands.pop_back();
+                w->wsCommands.push_back("undo");
             }
             else if (contentsCommandHistory.size()>=1&&contentsCommandHistory[contentsCommandHistory.size()-1].find("delete")==0)
             {
@@ -190,7 +197,10 @@ void CommandParser::CommandParseUndo(string command){
                 //inner_process = "insert "+inner_process;//这里变成undo实际上执行的操作
                 contentsCommandHistory.pop_back();//把insert自动写入history的记录删掉
                 contentsCommandHistory.push_back("undo");//成功的话插入一个undo
-
+                //把undo history写入workspace的wsCommands
+                WorkSpace *w = findWorkspaceByFileName(currentFileName);
+                w->wsCommands.pop_back();
+                w->wsCommands.push_back("undo");
             }
             else
             {
@@ -212,8 +222,13 @@ void CommandParser::CommandParseRedo(string command){
                     Invoker invoker;
                     invoker.setInsertCommand(commandA);
                     invoker.executeInsertCommand(number_line,text);//insert自动写了contents command history
+
                     contentsCommandHistory.pop_back();//把自动写的insert pop出来
                     contentsCommandHistory.pop_back();//把undo pop出来
+                    //把redo history写入workspace的wsCommands
+                    WorkSpace *w = findWorkspaceByFileName(currentFileName);
+                    w->wsCommands.pop_back();
+                    w->wsCommands.pop_back();
                 }
                 else if (contentsCommandHistory[contentsCommandHistory.size() - 2].find("delete")==0)
                 {
@@ -228,6 +243,10 @@ void CommandParser::CommandParseRedo(string command){
                     delete commandA;
                     contentsCommandHistory.pop_back();//把自动写入的delete出来
                     contentsCommandHistory.pop_back();//把undo pop出来
+                    //把redo history写入workspace的wsCommands
+                    WorkSpace *w = findWorkspaceByFileName(currentFileName);
+                    w->wsCommands.pop_back();
+                    w->wsCommands.pop_back();
                 }
             }
             else
@@ -292,6 +311,28 @@ void CommandParser::CommandParseList_workspace(string command){//8
     invoker.setList_workspaceCommand(commandA);
     invoker.executeCommand();
 }
+void CommandParser::CommandParseOpen(string command){//13
+    history.push_back(getTime() + command);
+    string openWorkspaceName = "";
+    if (!history.empty()) {
+        string& latestCommand = history.back(); // 获取最新的命令
+        string openCommandPrefix = "open ";
+        size_t prefixPos = latestCommand.find(openCommandPrefix);
+        if (prefixPos != string::npos) {
+            openWorkspaceName = latestCommand.substr(prefixPos + openCommandPrefix.length());
+        }
+    }
+    if(openWorkspaceName!=""){//解析出了命令行想打开的workspace name
+        OpenCommand *commandA = new OpenCommand;
+        Invoker invoker;
+        invoker.setOpenCommand(commandA);
+        invoker.executeCommand();
+    }
+    else{
+        cout<<"open命令解析错误"<<endl;
+    }
+    
+}
 void CommandParser::CommandParseClose(string command){//14
     history.push_back(getTime() + command);
     CloseCommand *commandA = new CloseCommand;
@@ -304,5 +345,13 @@ void CommandParser::CommandParseExit(string command){//15
     ExitCommand *commandA = new ExitCommand;
     Invoker invoker;
     invoker.setExitCommand(commandA);
+    invoker.executeCommand();
+}
+
+void CommandParser::CommandParseLs(string command){//16
+    history.push_back(getTime() + command);
+    LsCommand *commandA = new LsCommand;
+    Invoker invoker;
+    invoker.setLsCommand(commandA);
     invoker.executeCommand();
 }

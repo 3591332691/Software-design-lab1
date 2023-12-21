@@ -18,7 +18,9 @@ class CommandParser{
         void CommandParseHistory(string commandLine);//10
         void CommandParseStats(string commandLine);//11
         void CommandParseList_workspace(string commandLine);//8
+        void CommandParseOpen(string commandLine);//13
         void CommandParseClose(string commandLine);//14
         void CommandParseExit(string commandLine);//15
+        void CommandParseLs(string commandLine);//16
 };
 #endif

@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Site BuildName="Win32-mingw32-make"
+	BuildStamp="20231130-0000-Experimental"
+	Name="mbm-yesh-293313"
+	Generator="ctest-3.24.2"
+	CompilerName="D:/Mingw-w64/mingw64/bin/g++.exe"
+	CompilerVersion="13.2.0"
+	OSName="Windows"
+	Hostname="mbm-yesh-293313"
+	OSRelease=" Personal"
+	OSVersion=" (Build 19045)"
+	OSPlatform="AMD64"
+	Is64Bits="1"
+	VendorString="GenuineIntel"
+	VendorID="Intel Corporation"
+	FamilyID="6"
+	ModelID="12"
+	ProcessorCacheSize="-1"
+	NumberOfLogicalCPU="8"
+	NumberOfPhysicalCPU="4"
+	TotalVirtualMemory="23104"
+	TotalPhysicalMemory="16183"
+	LogicalProcessorsPerPhysical="2"
+	ProcessorClockFrequency="2803"
+	>
+	<Testing>
+		<StartDateTime>Nov 30 10:33 [NON-UTF-8-BYTE-0xD6]й[NON-UTF-8-BYTE-0xFA][NON-UTF-8-BYTE-0xB1][NON-UTF-8-BYTE-0xEA]׼ʱ[NON-UTF-8-BYTE-0xBC][NON-UTF-8-BYTE-0xE4]</StartDateTime>
+		<StartTestTime>1701311608</StartTestTime>
+		<TestList>
+			<Test>./MyTest</Test>
+		</TestList>
+		<Test Status="passed">
+			<Name>MyTest</Name>
+			<Path>.</Path>
+			<FullName>./MyTest</FullName>
+			<FullCommandLine>C:\Users\HUAWEI\Desktop\program\softwareDesign\lab1\build\lab2tests.exe</FullCommandLine>
+			<Results>
+				<NamedMeasurement type="numeric/double" name="Execution Time">
+					<Value>0.0161484</Value>
+				</NamedMeasurement>
+				<NamedMeasurement type="numeric/double" name="Processors">
+					<Value>1</Value>
+				</NamedMeasurement>
+				<NamedMeasurement type="text/string" name="Completion Status">
+					<Value>Completed</Value>
+				</NamedMeasurement>
+				<NamedMeasurement type="text/string" name="Command Line">
+					<Value>C:\Users\HUAWEI\Desktop\program\softwareDesign\lab1\build\lab2tests.exe</Value>
+				</NamedMeasurement>
+				<NamedMeasurement type="text/string" name="Environment">
+					<Value>#CTEST_RESOURCE_GROUP_COUNT=</Value>
+				</NamedMeasurement>
+				<Measurement>
+					<Value encoding="base64" compression="gzip">eJyLtoWDWIWg0ry8zLx0BUOFktTiEoW0ovxcGLu4NLMkVY8rWhcOYhXcc/KTEnMg8ql5ZZlF+Xm5qXlAtakluqUFaIqRzfStDAGyi7miFYJC/RTAIBYmqAciDYFSEODvjS6loGGgkFusSdB0iDqFkvySxBxNLuJcXpKaWKSbkl+exxWNHC64wkOhKDFPD9UeoLsDHIODXV1AXoKo1eMCAJv1anU=</Value>
+				</Measurement>
+			</Results>
+		</Test>
+		<EndDateTime>Nov 30 10:33 [NON-UTF-8-BYTE-0xD6]й[NON-UTF-8-BYTE-0xFA][NON-UTF-8-BYTE-0xB1][NON-UTF-8-BYTE-0xEA]׼ʱ[NON-UTF-8-BYTE-0xBC][NON-UTF-8-BYTE-0xE4]</EndDateTime>
+		<EndTestTime>1701311609</EndTestTime>
+		<ElapsedMinutes>0</ElapsedMinutes>
+	</Testing>
+</Site>

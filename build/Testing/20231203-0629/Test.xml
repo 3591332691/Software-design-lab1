@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Site BuildName="Win32-mingw32-make"
+	BuildStamp="20231203-0629-Experimental"
+	Name="mbm-yesh-293313"
+	Generator="ctest-3.24.2"
+	CompilerName="D:/Mingw-w64/mingw64/bin/g++.exe"
+	CompilerVersion="13.2.0"
+	OSName="Windows"
+	Hostname="mbm-yesh-293313"
+	OSRelease=" Personal"
+	OSVersion=" (Build 19045)"
+	OSPlatform="AMD64"
+	Is64Bits="1"
+	VendorString="GenuineIntel"
+	VendorID="Intel Corporation"
+	FamilyID="6"
+	ModelID="12"
+	ProcessorCacheSize="-1"
+	NumberOfLogicalCPU="8"
+	NumberOfPhysicalCPU="4"
+	TotalVirtualMemory="23104"
+	TotalPhysicalMemory="16183"
+	LogicalProcessorsPerPhysical="2"
+	ProcessorClockFrequency="2803"
+	>
+	<Testing>
+		<StartDateTime>Dec 03 23:40 [NON-UTF-8-BYTE-0xD6]й[NON-UTF-8-BYTE-0xFA][NON-UTF-8-BYTE-0xB1][NON-UTF-8-BYTE-0xEA]׼ʱ[NON-UTF-8-BYTE-0xBC][NON-UTF-8-BYTE-0xE4]</StartDateTime>
+		<StartTestTime>1701618016</StartTestTime>
+		<TestList>
+			<Test>./MyTest</Test>
+		</TestList>
+		<Test Status="failed">
+			<Name>MyTest</Name>
+			<Path>.</Path>
+			<FullName>./MyTest</FullName>
+			<FullCommandLine>C:\Users\HUAWEI\Desktop\program\softwareDesign\lab1\build\lab2tests.exe</FullCommandLine>
+			<Results>
+				<NamedMeasurement type="text/string" name="Exit Code">
+					<Value>Failed</Value>
+				</NamedMeasurement>
+				<NamedMeasurement type="text/string" name="Exit Value">
+					<Value>1</Value>
+				</NamedMeasurement>
+				<NamedMeasurement type="numeric/double" name="Execution Time">
+					<Value>0.117653</Value>
+				</NamedMeasurement>
+				<NamedMeasurement type="numeric/double" name="Processors">
+					<Value>1</Value>
+				</NamedMeasurement>
+				<NamedMeasurement type="text/string" name="Completion Status">
+					<Value>Completed</Value>
+				</NamedMeasurement>
+				<NamedMeasurement type="text/string" name="Command Line">
+					<Value>C:\Users\HUAWEI\Desktop\program\softwareDesign\lab1\build\lab2tests.exe</Value>
+				</NamedMeasurement>
+				<NamedMeasurement type="text/string" name="Environment">
+					<Value>#CTEST_RESOURCE_GROUP_COUNT=</Value>
+				</NamedMeasurement>
+				<Measurement>
+					<Value encoding="base64" compression="gzip">eJztWFtv00gUfvevOOKpqE0Upzc70kq1U2cXWC6irfoQ98FtJ621rh1spw1vQWJBUApllV1EVVEhBJunLDwBoSzS/hQaO3nbv8DckqaBZBNSYCU6Sqwz55z5zmXsT6NJ/9AcC3A5Z9umvQJx8JHne5BxnTUQ6QS8nOmjqJCONMcC/Gg5i4bF7MheN13HXkM29kV+JJdtcz4Cev7qLJkIabg8dwHoWGgoo+QpCsmEPuch19N/mlPmtTP6NPJ+8Z2snnWdFddY0z0n428YLsJ6c8XWLWNR1GkE+hSjS9lsYlJMQMowrZyLBC2fRUs+WgZ0JWdYpn8VnAz4q8hDsG5YOeQlBADEnS7m/GwOJ0ESm181l1bB9BJwSs9rcT0vj7F/Q5ZirTLgCRZUWc8rE1iexLKIDdNYxnNJw3oJyxLTyTHdxkF6RSZoSazgyARJUtsRkl0Qknii4pXaKDNKCstFwXmp2qGsiCxfEoHK4yyylGKRZbxOGuN14FpVhfmT4EqqBV8dMLcxhi3zHEj/5EYOY1xO8a7wWtQU7WvTh/Z7nNcoM1mWub4Rq4FPOsz3SiY1x9p6MslkeZLj4JylZJv/BNtb4kf1Gu8Vsau8V6QutnuHcozLWKeMcn+FvxKttTR728+788nuTjCd2qiedGmcRyM+E7x6UvXoWWPdYHPSPZmvJxXQXeC7T6tryfAU/YoUD2ZR3scf0fti8X2xgH9Qff2s9mIrvFuqb20Tp0NLbf+PWmmT6Xa57p+XB4Xb9fLf9fLjsPQ42L9X27lev1UJd/86KGx+7Fmt3A/u7tWKe//u79TfbdeKpaD8OnhYOihcC26+DX9/jnFq5QfBb3ewHG6Vw0fXgzeV6qvN6qtC9c2ToFLESzDy0cQodPjyRfDr09r2jfqfT0hP6g93ws29cLdC3Em5DqWPz2EP13F8uqk97Wr/VMOw+8DvQDiHOH1gfTXKOYb8TminK+0M3N+vQDxdqId8ZtTW1BzhIqFRWNPMCUlorbpp7MJLnVccGz91jNCVpjBPzZv+KiybmUxCmJqCiDgyDsPiiBiHqSkh0uuBpC/+ESKDHnXaEU6OOt8L5/Tz7nybo44Q+c6OOsJwL/tBuXb4Sx1phGGGPeiRphXn/3ikOYb8TuilG70M3t8vTzA4x5MjTWc6wiMNkFLO/KxNf3ShBENxGda8053vnOJkNR0Xz7WbYCjGFv/XlRYMjRJP8B3fsE4LvV2Y+chwI8vOhi2kW+/jOt7DgWvY0bZIOPdLyswMq5w5R4+2gylHwDI9cg+2iCxnI9GlY3gbxIZtVpuZFT4AKu5caA==</Value>
+				</Measurement>
+			</Results>
+		</Test>
+		<EndDateTime>Dec 03 23:40 [NON-UTF-8-BYTE-0xD6]й[NON-UTF-8-BYTE-0xFA][NON-UTF-8-BYTE-0xB1][NON-UTF-8-BYTE-0xEA]׼ʱ[NON-UTF-8-BYTE-0xBC][NON-UTF-8-BYTE-0xE4]</EndDateTime>
+		<EndTestTime>1701618027</EndTestTime>
+		<ElapsedMinutes>0</ElapsedMinutes>
+	</Testing>
+</Site>

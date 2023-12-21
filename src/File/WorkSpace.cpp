@@ -1,7 +1,14 @@
 #include <iostream>
 #include <fstream>
 #include <string>
+#include <sstream>
+#include <sys/stat.h>
 #include "WorkSpace.h"
+#include "constants.h"
+#include <filesystem>
+#include "tool/tool.h"
+namespace fs = std::filesystem;
+extern vector<WorkSpace*> workspaces;
 using namespace std;
 /**
  * @brief 用于初始化workspace_name,filename...
@@ -33,7 +40,6 @@ WorkSpace::WorkSpace(string filepath): File(){
  */
 void WorkSpace::setWorkingSpaceContent(vector<string> a){
     workspace_content = a;
-
 }
 /**
  * @brief 用于初始化workspace的名字，以便后续的list-workspace命令
@@ -47,4 +53,101 @@ void WorkSpace::set_workspace_name(string a){
  */
 void WorkSpace::kill(){
     delete this;
+}
+/**
+ * @brief 得到存储的WorkspaceContent
+ */
+vector<string> WorkSpace::getWorkspaceContent(){
+    return workspace_content;
+}
+
+/**
+ * @brief 保存工作区的时候，生成不同的txt的名字
+ */
+string  SessionMemento::generateFileName() {
+        ostringstream oss;
+        oss << MementoPath<<"/workspace_" << workspaceCounter << ".txt";
+        return oss.str();
+}
+
+/**
+ * @brief 保存工作区到MementoPath下
+ */
+void SessionMemento::storeWorkspace(vector<WorkSpace*> workspaces){
+     for (auto workspacePtr: workspaces) {
+            //自动生成txt的名字
+            string fileName = generateFileName();
+            ofstream file(fileName);
+            if (file.is_open()) {
+                file << "filename: " <<endl;
+                file << workspacePtr->getFileName()<< endl;
+
+                file<<"content:"<<endl;
+                for (const string& content : workspacePtr->getWorkspaceContent()) {
+                    file << content << endl;
+                }
+                file <<  endl;
+                file<<"wsCommand:"<<endl;
+                for (const string& content : workspacePtr->wsCommands) {
+                    file << content << endl;
+                }
+                file <<  endl;
+                file.close();
+                if (!file) {
+                    // 处理文件关闭失败的情况
+                    cout<<"backup文件关闭失败"<<endl;
+                }
+                workspaceCounter++;
+            }
+            else{
+                cout<<"生成备份文件"<<fileName<<"失败"<<endl;
+            }
+        }
+}
+/**
+ * @brief 用于还原上次保存的工作区内容
+ */
+vector<WorkSpace*> SessionMemento::getWorkspaces() 
+{
+    vector<WorkSpace*> Workspaces;
+    if (fs::exists(MementoPath) && fs::is_directory(MementoPath)) {
+        for (const auto& entry : fs::directory_iterator(MementoPath)) {
+            if (entry.is_regular_file() && entry.path().extension() == ".txt") {
+
+                ifstream file(entry.path().string());
+                if (file.is_open()) {
+                    string line;
+                    //WorkSpace* workspace = nullptr; 
+                    while (getline(file, line)) {
+                        // 提取文件名
+                        //cout<<"get line"<<line;
+                        if (line == "filename: ") {
+                            //cout<<"flag1"<<endl;
+                            getline(file, line);
+                            WorkSpace *workspace = new WorkSpace(line);
+                           // cout<<"get name"<<workspace->getFileName()<<endl;
+                            while (getline(file, line)) {
+                                if (line == "content:") {
+                                    while (getline(file, line) && !line.empty()&&line != "wsCommand:") {
+                                        workspace->workspace_content.push_back(line);
+                                    }
+                                    // 提取wsCommand
+                                    if (line == "wsCommand:") {
+                                    while (getline(file, line) && !line.empty()) {
+                                        workspace->wsCommands.push_back(line);
+                                    }
+                                }
+                                }
+                            }
+                            //cout<<"push_back"<<workspace->getFileName()<<endl;
+                            workspaces.push_back(workspace);
+                        }
+                file.close();
+                    } 
+                }
+            }
+        }
+    }
+    clearFolder(MementoPath);//提取之后清空文件夹
+    return Workspaces;
 }

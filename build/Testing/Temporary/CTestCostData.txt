@@ -1,5 +1,5 @@
 mytest 0 0
-MyTest 0 0
-MyTest 0 0
+MyTest 5 0.105181
+MyTest 5 0.105181
 ---
 MyTest

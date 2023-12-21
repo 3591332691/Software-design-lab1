@@ -48,5 +48,90 @@
   "directory": "C:/Users/HUAWEI/Desktop/program/softwareDesign/lab1/build",
   "command": "D:\\Mingw-w64\\mingw64\\bin\\g++.exe  @CMakeFiles/lab2.dir/includes_CXX.rsp -g -o CMakeFiles\\lab2.dir\\src\\tool\\tool.cpp.obj -c C:\\Users\\HUAWEI\\Desktop\\program\\softwareDesign\\lab1\\src\\tool\\tool.cpp",
   "file": "C:/Users/HUAWEI/Desktop/program/softwareDesign/lab1/src/tool/tool.cpp"
+},
+{
+  "directory": "C:/Users/HUAWEI/Desktop/program/softwareDesign/lab1/build",
+  "command": "D:\\Mingw-w64\\mingw64\\bin\\g++.exe  @CMakeFiles/lab2.dir/includes_CXX.rsp -g -o CMakeFiles\\lab2.dir\\main.cpp.obj -c C:\\Users\\HUAWEI\\Desktop\\program\\softwareDesign\\lab1\\main.cpp",
+  "file": "C:/Users/HUAWEI/Desktop/program/softwareDesign/lab1/main.cpp"
+},
+{
+  "directory": "C:/Users/HUAWEI/Desktop/program/softwareDesign/lab1/build",
+  "command": "D:\\Mingw-w64\\mingw64\\bin\\g++.exe  @CMakeFiles/lab2tests.dir/includes_CXX.rsp -g -o CMakeFiles\\lab2tests.dir\\tests\\test1.cpp.obj -c C:\\Users\\HUAWEI\\Desktop\\program\\softwareDesign\\lab1\\tests\\test1.cpp",
+  "file": "C:/Users/HUAWEI/Desktop/program/softwareDesign/lab1/tests/test1.cpp"
+},
+{
+  "directory": "C:/Users/HUAWEI/Desktop/program/softwareDesign/lab1/build",
+  "command": "D:\\Mingw-w64\\mingw64\\bin\\g++.exe  @CMakeFiles/lab2tests.dir/includes_CXX.rsp -g -o CMakeFiles\\lab2tests.dir\\tests\\test2.cpp.obj -c C:\\Users\\HUAWEI\\Desktop\\program\\softwareDesign\\lab1\\tests\\test2.cpp",
+  "file": "C:/Users/HUAWEI/Desktop/program/softwareDesign/lab1/tests/test2.cpp"
+},
+{
+  "directory": "C:/Users/HUAWEI/Desktop/program/softwareDesign/lab1/build",
+  "command": "D:\\Mingw-w64\\mingw64\\bin\\g++.exe  @CMakeFiles/lab2tests.dir/includes_CXX.rsp -g -o CMakeFiles\\lab2tests.dir\\src\\CommandParser\\CommandParser.cpp.obj -c C:\\Users\\HUAWEI\\Desktop\\program\\softwareDesign\\lab1\\src\\CommandParser\\CommandParser.cpp",
+  "file": "C:/Users/HUAWEI/Desktop/program/softwareDesign/lab1/src/CommandParser/CommandParser.cpp"
+},
+{
+  "directory": "C:/Users/HUAWEI/Desktop/program/softwareDesign/lab1/build",
+  "command": "D:\\Mingw-w64\\mingw64\\bin\\g++.exe  @CMakeFiles/lab2tests.dir/includes_CXX.rsp -g -o CMakeFiles\\lab2tests.dir\\src\\ContentsCommand\\ContentsCommand.cpp.obj -c C:\\Users\\HUAWEI\\Desktop\\program\\softwareDesign\\lab1\\src\\ContentsCommand\\ContentsCommand.cpp",
+  "file": "C:/Users/HUAWEI/Desktop/program/softwareDesign/lab1/src/ContentsCommand/ContentsCommand.cpp"
+},
+{
+  "directory": "C:/Users/HUAWEI/Desktop/program/softwareDesign/lab1/build",
+  "command": "D:\\Mingw-w64\\mingw64\\bin\\g++.exe  @CMakeFiles/lab2tests.dir/includes_CXX.rsp -g -o CMakeFiles\\lab2tests.dir\\src\\File\\File.cpp.obj -c C:\\Users\\HUAWEI\\Desktop\\program\\softwareDesign\\lab1\\src\\File\\File.cpp",
+  "file": "C:/Users/HUAWEI/Desktop/program/softwareDesign/lab1/src/File/File.cpp"
+},
+{
+  "directory": "C:/Users/HUAWEI/Desktop/program/softwareDesign/lab1/build",
+  "command": "D:\\Mingw-w64\\mingw64\\bin\\g++.exe  @CMakeFiles/lab2tests.dir/includes_CXX.rsp -g -o CMakeFiles\\lab2tests.dir\\src\\File\\WorkSpace.cpp.obj -c C:\\Users\\HUAWEI\\Desktop\\program\\softwareDesign\\lab1\\src\\File\\WorkSpace.cpp",
+  "file": "C:/Users/HUAWEI/Desktop/program/softwareDesign/lab1/src/File/WorkSpace.cpp"
+},
+{
+  "directory": "C:/Users/HUAWEI/Desktop/program/softwareDesign/lab1/build",
+  "command": "D:\\Mingw-w64\\mingw64\\bin\\g++.exe  @CMakeFiles/lab2tests.dir/includes_CXX.rsp -g -o CMakeFiles\\lab2tests.dir\\src\\FileCommand\\FileCommand.cpp.obj -c C:\\Users\\HUAWEI\\Desktop\\program\\softwareDesign\\lab1\\src\\FileCommand\\FileCommand.cpp",
+  "file": "C:/Users/HUAWEI/Desktop/program/softwareDesign/lab1/src/FileCommand/FileCommand.cpp"
+},
+{
+  "directory": "C:/Users/HUAWEI/Desktop/program/softwareDesign/lab1/build",
+  "command": "D:\\Mingw-w64\\mingw64\\bin\\g++.exe  @CMakeFiles/lab2tests.dir/includes_CXX.rsp -g -o CMakeFiles\\lab2tests.dir\\src\\Session\\Session.cpp.obj -c C:\\Users\\HUAWEI\\Desktop\\program\\softwareDesign\\lab1\\src\\Session\\Session.cpp",
+  "file": "C:/Users/HUAWEI/Desktop/program/softwareDesign/lab1/src/Session/Session.cpp"
+},
+{
+  "directory": "C:/Users/HUAWEI/Desktop/program/softwareDesign/lab1/build",
+  "command": "D:\\Mingw-w64\\mingw64\\bin\\g++.exe  @CMakeFiles/lab2tests.dir/includes_CXX.rsp -g -o CMakeFiles\\lab2tests.dir\\src\\SessionCommand\\SessionCommand.cpp.obj -c C:\\Users\\HUAWEI\\Desktop\\program\\softwareDesign\\lab1\\src\\SessionCommand\\SessionCommand.cpp",
+  "file": "C:/Users/HUAWEI/Desktop/program/softwareDesign/lab1/src/SessionCommand/SessionCommand.cpp"
+},
+{
+  "directory": "C:/Users/HUAWEI/Desktop/program/softwareDesign/lab1/build",
+  "command": "D:\\Mingw-w64\\mingw64\\bin\\g++.exe  @CMakeFiles/lab2tests.dir/includes_CXX.rsp -g -o CMakeFiles\\lab2tests.dir\\src\\ShowCommand\\ShowCommand.cpp.obj -c C:\\Users\\HUAWEI\\Desktop\\program\\softwareDesign\\lab1\\src\\ShowCommand\\ShowCommand.cpp",
+  "file": "C:/Users/HUAWEI/Desktop/program/softwareDesign/lab1/src/ShowCommand/ShowCommand.cpp"
+},
+{
+  "directory": "C:/Users/HUAWEI/Desktop/program/softwareDesign/lab1/build",
+  "command": "D:\\Mingw-w64\\mingw64\\bin\\g++.exe  @CMakeFiles/lab2tests.dir/includes_CXX.rsp -g -o CMakeFiles\\lab2tests.dir\\src\\tool\\tool.cpp.obj -c C:\\Users\\HUAWEI\\Desktop\\program\\softwareDesign\\lab1\\src\\tool\\tool.cpp",
+  "file": "C:/Users/HUAWEI/Desktop/program/softwareDesign/lab1/src/tool/tool.cpp"
+},
+{
+  "directory": "C:/Users/HUAWEI/Desktop/program/softwareDesign/lab1/build",
+  "command": "D:\\Mingw-w64\\mingw64\\bin\\g++.exe  @CMakeFiles/lab2tests.dir/includes_CXX.rsp -g -o CMakeFiles\\lab2tests.dir\\test.cpp.obj -c C:\\Users\\HUAWEI\\Desktop\\program\\softwareDesign\\lab1\\test.cpp",
+  "file": "C:/Users/HUAWEI/Desktop/program/softwareDesign/lab1/test.cpp"
+},
+{
+  "directory": "C:/Users/HUAWEI/Desktop/program/softwareDesign/lab1/build/third-party/gtest/googlemock",
+  "command": "D:\\Mingw-w64\\mingw64\\bin\\g++.exe  @CMakeFiles/gmock.dir/includes_CXX.rsp -g -Wall -Wshadow -Wundef -Wno-error=dangling-else -DGTEST_HAS_PTHREAD=0 -fexceptions -Wextra -Wno-unused-parameter -Wno-missing-field-initializers -o CMakeFiles\\gmock.dir\\src\\gmock-all.cc.obj -c C:\\Users\\HUAWEI\\Desktop\\program\\softwareDesign\\lab1\\third-party\\gtest\\googlemock\\src\\gmock-all.cc",
+  "file": "C:/Users/HUAWEI/Desktop/program/softwareDesign/lab1/third-party/gtest/googlemock/src/gmock-all.cc"
+},
+{
+  "directory": "C:/Users/HUAWEI/Desktop/program/softwareDesign/lab1/build/third-party/gtest/googlemock",
+  "command": "D:\\Mingw-w64\\mingw64\\bin\\g++.exe  @CMakeFiles/gmock_main.dir/includes_CXX.rsp -g -Wall -Wshadow -Wundef -Wno-error=dangling-else -DGTEST_HAS_PTHREAD=0 -fexceptions -Wextra -Wno-unused-parameter -Wno-missing-field-initializers -o CMakeFiles\\gmock_main.dir\\src\\gmock_main.cc.obj -c C:\\Users\\HUAWEI\\Desktop\\program\\softwareDesign\\lab1\\third-party\\gtest\\googlemock\\src\\gmock_main.cc",
+  "file": "C:/Users/HUAWEI/Desktop/program/softwareDesign/lab1/third-party/gtest/googlemock/src/gmock_main.cc"
+},
+{
+  "directory": "C:/Users/HUAWEI/Desktop/program/softwareDesign/lab1/build/third-party/gtest/googletest",
+  "command": "D:\\Mingw-w64\\mingw64\\bin\\g++.exe  @CMakeFiles/gtest.dir/includes_CXX.rsp -g -Wall -Wshadow -Wundef -Wno-error=dangling-else -DGTEST_HAS_PTHREAD=0 -fexceptions -Wextra -Wno-unused-parameter -Wno-missing-field-initializers -o CMakeFiles\\gtest.dir\\src\\gtest-all.cc.obj -c C:\\Users\\HUAWEI\\Desktop\\program\\softwareDesign\\lab1\\third-party\\gtest\\googletest\\src\\gtest-all.cc",
+  "file": "C:/Users/HUAWEI/Desktop/program/softwareDesign/lab1/third-party/gtest/googletest/src/gtest-all.cc"
+},
+{
+  "directory": "C:/Users/HUAWEI/Desktop/program/softwareDesign/lab1/build/third-party/gtest/googletest",
+  "command": "D:\\Mingw-w64\\mingw64\\bin\\g++.exe  @CMakeFiles/gtest_main.dir/includes_CXX.rsp -g -Wall -Wshadow -Wundef -Wno-error=dangling-else -DGTEST_HAS_PTHREAD=0 -fexceptions -Wextra -Wno-unused-parameter -Wno-missing-field-initializers -o CMakeFiles\\gtest_main.dir\\src\\gtest_main.cc.obj -c C:\\Users\\HUAWEI\\Desktop\\program\\softwareDesign\\lab1\\third-party\\gtest\\googletest\\src\\gtest_main.cc",
+  "file": "C:/Users/HUAWEI/Desktop/program/softwareDesign/lab1/third-party/gtest/googletest/src/gtest_main.cc"
 }
 ]

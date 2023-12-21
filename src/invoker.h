@@ -62,6 +62,15 @@ public:
     void setCloseCommand(CloseCommand* cmd){
         origin_command = cmd;
     }
+    void setOpenCommand(OpenCommand* cmd){
+        origin_command = cmd;
+    }
+    void setSaveCommand(SaveCommand* cmd){
+        origin_command = cmd;
+    }
+    void setLsCommand(LsCommand* cmd){
+        origin_command = cmd;
+    }
     void executeCommand(){
         origin_command->execute();
     }

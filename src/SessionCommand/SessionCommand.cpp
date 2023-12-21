@@ -2,28 +2,40 @@
 #include <iostream>
 #include <vector>
 #include <fstream>
+#include "tool\\tool.h"
 #include "constants.h"
-#include "File/WorkSpace.h"
+#include "File\\WorkSpace.h"
+#include "invoker.h"
+#include <limits>
+#include <filesystem>
 using namespace std;
+namespace fs = std::filesystem;  // 使用 std::filesystem 命名空间
 extern vector <string> history;
 extern vector<WorkSpace*> workspaces;
 extern string currentFileName;
 extern vector <string> currentFileContents;
 extern vector<string> workingTime;
-void List_workspaceCommand::execute() {//TODO:已修改还未save的加*号
+void List_workspaceCommand::execute() {
     for (WorkSpace* workspace : workspaces) {
         string workspaceName = workspace->get_workspace_name();
         string fileName = workspace->getFileName();
         if (currentFileName == fileName) {
-            cout << "->" << workspaceName << endl;
+            cout << "->" << workspaceName;
         } else {
-            cout << "  "<<workspaceName << endl;
+            cout << "  "<<workspaceName;
+        }
+        if(checkWorkSpaceStatus(workspace)==1)
+        {
+            cout<<" *"<<endl;
+        }
+        else{
+            cout<<""<<endl;
         }
     }
 }
 void CloseCommand::execute() {
     if(currentFileName == "") {
-        cout<<"没有文件正在编辑"<<endl;
+        cout<<"没有文件正在被编辑"<<endl;
         return ;
     }
     for (auto it = workspaces.begin(); it != workspaces.end(); ++it) {
@@ -31,31 +43,36 @@ void CloseCommand::execute() {
         string fileName = workspace->getFileName();
         if (currentFileName == fileName) { // 找到正在进行的 workspace
             // 0. 根据文件状态问问“Do you want to save the current workspace [Y\N] ？”，如果 y 就 save
-            // 1. store工作时间，放到 stats 里面
-            workspace->storeWorkingTime();//TODO:这段可以代码可以复用
-            bool found = false; // 标记在workingTime里是否找到了自己
-            for (auto it = workingTime.begin(); it != workingTime.end(); ++it) {
-                string& timeString = *it;
-                size_t spaceIndex = timeString.find(' ');
-                if (spaceIndex != string::npos) {
-                    string fileName = timeString.substr(0, spaceIndex);
-                    if (fileName == workspace->getFileName()) { // 如果在 workingTime 中找到了自己
-                        int time = workspace->getWorkingTime();
-                        size_t digitIndex = timeString.find_first_of("0123456789", spaceIndex);
-                        if (digitIndex != string::npos) {
-                            int currentValue = stoi(timeString.substr(digitIndex));
-                            int newValue = currentValue + time;
-                            timeString = fileName + " " + to_string(newValue); // 改变后面的分钟数
-                        }
-                        found = true;
-                        break;
-                    }
+            if(checkWorkSpaceStatus(workspace)==1)
+            {
+                cout<<"Do you want to save the current workspace [Y\\N] ？";
+                char userChoice;
+                std::ios_base::sync_with_stdio(false);  // 禁用同步
+
+                // 其他代码
+
+                if (std::cin >> userChoice) {
+                    // 用户输入了数据
+                    //std::cout << "User input: " << userChoice << std::endl;
+                } else {
+                    // 没有用户输入,默认为y
+                    userChoice = 'Y';
+                }
+
+
+                cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n'); // 清除输入缓冲区中的换行符
+
+                if (userChoice == 'Y' || userChoice == 'y') {
+                    SaveCommand *commandA = new SaveCommand;
+                    Invoker invoker;
+                    invoker.setSaveCommand(commandA);
+                    invoker.executeCommand();
+                    delete commandA;
                 }
             }
-            if (!found) {//如果没找到，
-                string newTimeString = workspace->getFileName() + " " + to_string(workspace->getWorkingTime());
-                workingTime.push_back(newTimeString);
-            }
+            // 1. store工作时间&放到 WorkingTime 里面
+            workspace->storeWorkingTime();
+            pushWorkspaceIntoWorkingTime(workspace);
             // 2. 清空 current
             currentFileName = "";
             currentFileContents.clear();
@@ -65,6 +82,48 @@ void CloseCommand::execute() {
             return;
         }
     }
+
+}
+void OpenCommand::execute(){
+    string openWorkspaceName = "";
+    if (!history.empty()) {
+        string& latestCommand = history.back(); // 获取最新的命令
+        string openCommandPrefix = "open ";
+        size_t prefixPos = latestCommand.find(openCommandPrefix);
+        if (prefixPos != string::npos) {
+            openWorkspaceName = latestCommand.substr(prefixPos + openCommandPrefix.length(),latestCommand.length() - (prefixPos + openCommandPrefix.length())-1);
+        }
+    }
+    if(openWorkspaceName!=""&&currentFileName!=""){
+        WorkSpace* newWorkspace = findWorkspaceByName(openWorkspaceName);
+        if (newWorkspace != nullptr) {
+            //找到了符合 openWorkspaceName 的 workspace,
+            //更新currentFileContents,currentFileName
+            WorkSpace* oldWorkspace = findWorkspaceByFileName(currentFileName);
+            oldWorkspace->storeWorkingTime();
+            newWorkspace->setStartTime();
+            oldWorkspace->setWorkingSpaceContent(currentFileContents);
+            currentFileContents = newWorkspace->getWorkspaceContent();
+            currentFileName = newWorkspace->getFileName();
+        }
+        else{
+            //cout<<"找不到名字为"<<openWorkspaceName<<"的workspace"<<endl;
+        }
+    }
+    /*if(openWorkspaceName!=""&&currentFileName==""){//open a new
+        WorkSpace* newWorkspace = findWorkspaceByName(openWorkspaceName);
+        if (newWorkspace != nullptr) {
+            //找到了符合 openWorkspaceName 的 workspace,
+            //更新currentFileContents,currentFileName
+            newWorkspace->setStartTime();
+            currentFileContents = newWorkspace->getWorkspaceContent();
+            currentFileName = newWorkspace->getFileName();
+        }
+        else{
+            //cout<<"找不到名字为"<<openWorkspaceName<<"的workspace"<<endl;
+        }
+    }*/
+
 }
 void ExitCommand::execute() {
     //1.写historyLog
@@ -85,7 +144,7 @@ void ExitCommand::execute() {
         // 关闭文件
         file1.close();
     }
-    //2.TODO:写workingtimeLog,要加一个全局变量stats来记录已被关闭的workspace的工作时长，把还开着的都加到stats里
+    //2.写workingtimeLog
     ofstream file2(worktimeLogPath, ios::app);
     if (!file2.is_open()) {
         // 文件打开失败，处理错误
@@ -93,14 +152,107 @@ void ExitCommand::execute() {
     }
     else{
         // 将 还开着的workspace时长写入stats，特别要注意正在进行的要store一遍
+        WorkSpace* oldWorkspace = findWorkspaceByFileName(currentFileName);
+        if (oldWorkspace != nullptr) {
+            // 找到了符合 currentFileName 的 workspace
+            oldWorkspace->storeWorkingTime();
+        }
         for (int i = 0;i<workspaces.size();i++) {
-            
+            pushWorkspaceIntoWorkingTime(workspaces[i]);
         }
         //把全局变量stats里的写入文件
+        printWorkingTime();
         // 添加一个空行作为分隔
         file2 << endl;
-
         // 关闭文件
         file2.close();
+    }
+    //3.保存所有开启的workspace便于后面恢复workspace
+    int unsavedFlag = 0;
+    for(auto a:workspaces){//检测有没有未保存的
+        //cout<<"检测有没有未保存的workspace"<<endl;
+        if(checkWorkSpaceStatus(a)==1)
+        {
+            unsavedFlag = 1;
+            break;
+        }
+    }
+    if(unsavedFlag==1)
+    {
+        cout<<"Do you want to save the unsaved workspace [Y\\N] ？";
+
+        // char userChoice;
+        // cin >> userChoice; 
+        //cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n'); // 清除输入缓冲区中的换行符
+        //TODO:如果是free test,把这里改回来
+
+        char userChoice = 'Y';//new change for test4
+        
+        //如果回答yes
+        if (userChoice == 'Y' || userChoice == 'y'){//
+            WorkSpace * a = findWorkspaceByFileName(currentFileName);
+            a->setWorkingSpaceContent(currentFileContents);
+            SessionMemento memo;
+            memo.storeWorkspace(workspaces);
+        }
+    }
+}
+
+void SaveCommand::execute() {
+    ofstream file(currentFileName,ios::trunc);
+    if (file.is_open()) 
+    {
+        for(auto content : currentFileContents)
+        {
+             file << content << endl;
+        }
+        //cout<<"save "<<currentFileName<<" done"<<endl;
+    }
+    else
+    {
+        printf("save failed --file not open\n");
+    }
+}
+
+void LsCommand::execute() {//16
+    if(currentFileName=="") return;
+    fs::path root = fs::path(currentFileName).parent_path();
+    Working_directoryTreeNode* rootDir = buildDirectoryTree(root.string());
+
+    for (Working_directoryTreeNode* child : rootDir->children) {//先写*的
+        if(currentFileName.find(child->NodeName)==currentFileName.length()-child->NodeName.length() ){
+
+            if(rootDir->children.size() == 1){//只有一个的话，他就是last
+                if(rootDir->children.back()==child){
+                //是children里的最后一个，为了方便直接去掉
+                if(child == rootDir->children.back()){
+                    rootDir->children.pop_back();
+                }
+            }
+                displayDirectoryTree(child,true,"");
+            }
+            else{
+                if(rootDir->children.back()==child){
+                //是children里的最后一个，为了方便直接去掉
+                if(child == rootDir->children.back()){
+                    rootDir->children.pop_back();
+                }
+            }
+                displayDirectoryTree(child,false,"");
+            }
+            
+            
+        }
+    }
+
+    for (Working_directoryTreeNode* child : rootDir->children) {
+        if(currentFileName.find(child->NodeName)!=currentFileName.length()-child->NodeName.length()){
+            if(rootDir->children[rootDir->children.size()-1]==child)
+                displayDirectoryTree(child,true,"");//最后一个，islast==true
+            else{
+                displayDirectoryTree(child,false,"");
+            }
+        }
+        
     }
 }

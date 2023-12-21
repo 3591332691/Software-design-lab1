@@ -9,16 +9,24 @@ void generateTree(struct TreeNode* preNode, int& index, int level) {
     struct TreeNode* currentNode= new TreeNode();//创造当下的node
     int currentLevel;
     while (index < currentFileContents.size()) {
+        
         string line = currentFileContents[index];//取到第index+1行
+        if (line.empty()) {
+            index++;
+            continue;  // 跳过空行
+        }
+
         currentNode->title = line.substr(line.find(" ")+1);//写入title
         if(line.find_first_of('#')==string::npos)//表示是正文
         {
             currentLevel = 100;
+            currentNode->title = line;
         }
         else
         {
             currentLevel = line.find_first_not_of('#');//代表是第几级标题
         }
+
         currentNode->level = currentLevel;//写入level
         if (currentLevel == level) 
         {//同级
@@ -53,23 +61,34 @@ void generateTree(struct TreeNode* preNode, int& index, int level) {
         }
     }
 }
-void printNode(struct TreeNode* node){
-    if(node->level==100){
-        node->level = node->parent->level+1;
+
+
+void printNode(struct TreeNode* node, bool isLastChild = false, string prefix = "") {
+    if(node->title!="root"){
+        cout << prefix;
+        if (isLastChild) {
+            cout << "└── ";
+            prefix += "   ";
+        } else {
+            cout << "├── ";
+            prefix += "│  ";
+        }
+        cout << node->title;
     }
-    for (int i = 0; i < node->level; i++) {
-        cout << "    "; // 根据缩进级别打印空格
+    int numChildren = node->children.size();
+    for (int i = 0; i < numChildren; i++) {
+        struct TreeNode* child = node->children[i];
+        if (child->title==node->title) 
+        {
+            continue;
+        }
+        bool isLast = (i == numChildren - 1);
+        printNode(child, isLast, prefix);
     }
-    cout << "└──"<<node->title << endl;
 }
-void printTreeStructure(struct TreeNode* node, int indent = 0) {
-    if(node->children.size()==0) printNode(node);
-    else{
-        printNode(node);
-        for(auto child:node->children){
-        printTreeStructure(child);
-    }
-    } 
+
+void printTreeStructure(struct TreeNode* node) {
+    printNode(node, true, "");
 }
 
 void Display::display(){
