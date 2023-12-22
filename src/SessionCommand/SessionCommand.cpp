@@ -45,23 +45,23 @@ void CloseCommand::execute() {
             // 0. 根据文件状态问问“Do you want to save the current workspace [Y\N] ？”，如果 y 就 save
             if(checkWorkSpaceStatus(workspace)==1)
             {
-                cout<<"Do you want to save the current workspace [Y\\N] ？";
+                cout<<"Do you want to save the current workspace [Y\\N] ?";
                 char userChoice;
-                std::ios_base::sync_with_stdio(false);  // 禁用同步
+                // std::ios_base::sync_with_stdio(false);  // 禁用同步
 
-                // 其他代码
+                // // 其他代码
 
-                if (std::cin >> userChoice) {
-                    // 用户输入了数据
-                    //std::cout << "User input: " << userChoice << std::endl;
-                } else {
-                    // 没有用户输入,默认为y
-                    userChoice = 'Y';
-                }
+                // if (std::cin >> userChoice) {
+                //     // 用户输入了数据
+                //     //std::cout << "User input: " << userChoice << std::endl;
+                // } else {
+                //     // 没有用户输入,默认为y
+                //     userChoice = 'Y';
+                // }
 
 
-                cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n'); // 清除输入缓冲区中的换行符
-
+                // cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n'); // 清除输入缓冲区中的换行符
+                userChoice = 'Y';
                 if (userChoice == 'Y' || userChoice == 'y') {
                     SaveCommand *commandA = new SaveCommand;
                     Invoker invoker;
@@ -107,7 +107,20 @@ void OpenCommand::execute(){
             currentFileName = newWorkspace->getFileName();
         }
         else{
-            //cout<<"找不到名字为"<<openWorkspaceName<<"的workspace"<<endl;
+            cout<<"找不到名字为"<<openWorkspaceName<<"的workspace"<<endl;
+        }
+    }
+    if(openWorkspaceName!=""&&currentFileName==""){
+        WorkSpace* newWorkspace = findWorkspaceByName(openWorkspaceName);
+        if (newWorkspace != nullptr) {
+            //找到了符合 openWorkspaceName 的 workspace,
+            //更新currentFileContents,currentFileName
+            newWorkspace->setStartTime();
+            currentFileContents = newWorkspace->getWorkspaceContent();
+            currentFileName = newWorkspace->getFileName();
+        }
+        else{
+            cout<<"找不到名字为"<<openWorkspaceName<<"的workspace"<<endl;
         }
     }
     /*if(openWorkspaceName!=""&&currentFileName==""){//open a new
@@ -168,18 +181,25 @@ void ExitCommand::execute() {
         file2.close();
     }
     //3.保存所有开启的workspace便于后面恢复workspace
+
+    // WorkSpace * a = findWorkspaceByFileName(currentFileName);
+    // a->setWorkingSpaceContent(currentFileContents);
+    // SessionMemento memo;
+    // memo.storeWorkspace(workspaces);
+    
+    //下面这里是判断，上下是两种不同的需求
     int unsavedFlag = 0;
     for(auto a:workspaces){//检测有没有未保存的
-        //cout<<"检测有没有未保存的workspace"<<endl;
-        if(checkWorkSpaceStatus(a)==1)
-        {
+       //cout<<"检测有没有未保存的workspace"<<endl;
+       if(checkWorkSpaceStatus(a)==1)
+       {
             unsavedFlag = 1;
             break;
         }
     }
     if(unsavedFlag==1)
     {
-        cout<<"Do you want to save the unsaved workspace [Y\\N] ？";
+        cout<<"Do you want to save the unsaved workspace [Y\\N] ?";
 
         // char userChoice;
         // cin >> userChoice; 

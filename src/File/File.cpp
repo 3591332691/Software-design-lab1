@@ -27,7 +27,7 @@ void File::setFileName(string a){
 
 
 /**
- * @brief 获得文件名字
+ * @brief 获得文件名字,其实是文件路径
  *
  *
  * @return filename

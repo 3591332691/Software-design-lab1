@@ -8,6 +8,7 @@
 #include <filesystem>
 #include "tool/tool.h"
 namespace fs = std::filesystem;
+extern string currentFileName;
 extern vector<WorkSpace*> workspaces;
 using namespace std;
 /**
@@ -79,9 +80,16 @@ void SessionMemento::storeWorkspace(vector<WorkSpace*> workspaces){
             string fileName = generateFileName();
             ofstream file(fileName);
             if (file.is_open()) {
-                file << "filename: " <<endl;
-                file << workspacePtr->getFileName()<< endl;
-
+                
+                if(workspacePtr->getFileName().find(currentFileName)==workspacePtr->getFileName().size()-currentFileName.size()){
+                    //如果这个是正在被打开的workspace
+                    file << "*filename: " <<endl;
+                    file << workspacePtr->getFileName()<< endl;
+                }
+                else{
+                    file << "filename: " <<endl;
+                    file << workspacePtr->getFileName()<< endl;
+                }
                 file<<"content:"<<endl;
                 for (const string& content : workspacePtr->getWorkspaceContent()) {
                     file << content << endl;
@@ -122,10 +130,31 @@ vector<WorkSpace*> SessionMemento::getWorkspaces()
                         // 提取文件名
                         //cout<<"get line"<<line;
                         if (line == "filename: ") {
-                            //cout<<"flag1"<<endl;
+                            
                             getline(file, line);
                             WorkSpace *workspace = new WorkSpace(line);
                            // cout<<"get name"<<workspace->getFileName()<<endl;
+                            while (getline(file, line)) {
+                                if (line == "content:") {
+                                    while (getline(file, line) && !line.empty()&&line != "wsCommand:") {
+                                        workspace->workspace_content.push_back(line);
+                                    }
+                                    // 提取wsCommand
+                                    if (line == "wsCommand:") {
+                                    while (getline(file, line) && !line.empty()) {
+                                        workspace->wsCommands.push_back(line);
+                                    }
+                                }
+                                }
+                            }
+                            //cout<<"push_back"<<workspace->getFileName()<<endl;
+                            workspaces.push_back(workspace);
+                        }
+                        if (line == "*filename: ") {      
+                            getline(file, line);
+                            WorkSpace *workspace = new WorkSpace(line);
+                           // cout<<"get name"<<workspace->getFileName()<<endl;
+                            currentFileName = workspace->getFileName();
                             while (getline(file, line)) {
                                 if (line == "content:") {
                                     while (getline(file, line) && !line.empty()&&line != "wsCommand:") {

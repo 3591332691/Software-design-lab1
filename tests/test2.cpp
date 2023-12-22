@@ -21,9 +21,9 @@ extern vector<string> history;
 extern vector<string> contentsCommandHistory;//for undo&redo only have insert&delete
 extern vector<WorkSpace*> workspaces;
 extern vector<string> workingTime;
-string expectedOutput21 = "Do you want to save the current workspace [Y\\N] ？\n";
+string expectedOutput21 = "Do you want to save the current workspace [Y\\N] ?";
 string expectedOutput22 = "->test3 *\n";
-string expectedOutput23 = "Do you want to save the unsaved workspace [Y\\N] ？\n";
+string expectedOutput23 = "Do you want to save the unsaved workspace [Y\\N] ?";
 
 TEST(MyTests, Test2) {
     //part1
@@ -141,6 +141,7 @@ TEST(MyTests, Test4) {
     str = "save\n";
     commands.push_back(str);
     str = "exit\n";
+    commands.push_back(str);
     testCommand(commands);
     initial();//重新启动
     str = "list-workspace\n";

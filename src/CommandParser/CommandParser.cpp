@@ -251,7 +251,7 @@ void CommandParser::CommandParseRedo(string command){
             }
             else
             {
-                cout<<"error:there is no undo."<<endl;
+                //cout<<"error:there is no undo."<<endl;
             }
 
 }

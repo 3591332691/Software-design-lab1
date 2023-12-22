@@ -21,11 +21,11 @@ extern vector<string> history;
 extern vector<string> contentsCommandHistory;//for undo&redo only have insert&delete
 extern vector<WorkSpace*> workspaces;
 extern vector<string> workingTime;
-string expectedOutput1 = "└──书籍推荐\n"
-                        "   └──编程\n"
-                        "      ├──《设计模式的艺术》\n"
-                        "      ├──《云原生：运用容器、函数计算和数据构建下一代应用》\n"
-                        "      └──《深入理解Java虚拟机》\n"
+string expectedOutput1 = "└── 书籍推荐\n"
+                        "   └── 编程\n"
+                        "      ├── * 《设计模式的艺术》\n"
+                        "      ├── * 《云原生：运用容器、函数计算和数据构建下一代应用》\n"
+                        "      └── * 《深入理解Java虚拟机》\n"
                         ;
 TEST(MyTests, Test1) {
 
